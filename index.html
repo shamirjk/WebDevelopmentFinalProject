@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script src="includes/jquery-3.1.1.slim.min.js"></script>
+    <script src="includes/pattern.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="includes/style.css">
+    <title> Sport Control Manager</title>
+    <!--<link rel="stylesheet" href="includes/style.css">-->
+    <title>Sport Control Manager</title>
+    <style>
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <header class="closed">
+        <section>
+            <a href="index.html" id="logo"></a>
+            <ul>
+                <li><a href="#">B</a></li>
+                <li class="lead"><a href="#" id="hamburger" class="closedHamburger"></a></li>
+            </ul>
+            <ul id="profile">
+                <li><a href="#" id="alert"></a></li>
+                <li><a href="#" id="profileImg"></a></li>
+                <ul>
+                    <li>Full name</li>
+                    <li>maildddddddd@gdgg.com</li>
+                    <li>positon maneger</li>
+                    <li><a href="#">edit</a></li>
+                    <li><a href="#">Log Out</a></li>
+                </ul>
+            </ul>
+            <section class="search">
+                <form action="#" method="post">
+                    <input type="search" id="searchBar" name="search" placeholder="Search..">
+                    <input type="submit" value="submit">
+                </form>
+            </section>
+            <nav>
+                <ul>
+                    <li><a class="active" href="#">דוחות</a></li>
+                    <li><a href="#">מתקנים</a></li>
+                    <li><a href="#">מאמנים</a></li>
+                    <li><a href="#">מתאמנים</a></li>
+                    <li><a href="training.html">אימונים</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ol>
+        <section>
+            <h1></h1>
+            <table>
+            </table>
+        </section>
+    </main>
+</div>
+<script>
+    $("#hamburger").click(function(){
+        $("header").toggleClass(function(){
+            if($(this).is(".closed")){
+                return "opened";
+            }else return "closed";
+        });
+    });
+</script>
+</body>
+</html>

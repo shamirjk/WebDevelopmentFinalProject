@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header, main, footer, section, article, nav {
+    display: block;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+header {
+    background-color: #212121;
+    height: 70px;
+    width: 100%;
+    transition: 2s;
+}
+
+header > section {
+    display: block;
+    max-width: 1000px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+header>section>ul:nth-child(2){
+    margin: 23px 0 0 0;
+    width: 25px;
+    height: 25px;
+}
+header>section>ul:nth-child(2)>li>a,header>section>ul:nth-child(2)>li{
+    width: 100%;
+    height: 100%;
+}
+.closed #hamburger{
+    background: url("../images/icons/hamburger_icon.png") center no-repeat;
+    background-size: 23px;
+    transition: 500ms;
+}
+.opened #hamburger{
+    background: url("../images/icons/hamburger_icon_close.png") center no-repeat;
+    background-size: 23px;
+}
+/*navigation*/
+nav > ul > li > a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    transition: background-color 1s;
+}
+nav > ul > li > a:hover{
+    text-decoration: none; /*cancel butstrap*/
+    color: #ffffff; /*cancel butstrap*/
+    background-color: #000000;
+    font-weight: bold;
+}
+header >section>ul:nth-child(3)>li:nth-child(1)>a {
+    background: url("../images/icons/bell_icon.gif") no-repeat;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+header >section>ul:nth-child(3)>ul:nth-child(3){
+    clear: both;
+    /*border: 1px solid violet;*/
+}
+#name{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*border: 1px solid coral;*/
+    display: block;
+    color: #ffffff;
+    text-align: right;
+    font-size: 20px;
+}
+.breadcrumb {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+main {
+    max-width: 1000px;
+    height: 700px;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 10px;
+}
+header .search{
+    position: relative;
+}
+#logo {
+    display: block;
+}
+
+/*main input search*/
+input[name=search]{
+    direction: rtl;
+}
+
+@media (min-width: 740px) {
+    /*
+    *header
+    */
+    /*logo*/
+    #logo {
+        background: url("../images/logo.png");
+        width: 100px;
+        height: 70px;
+        /*border: 1px solid black;*/
+        float: right;
+    }
+    /*settings panel*/
+
+    /*profile and pic of profile*/
+    #profile>li:nth-child(2)>a {
+        background: url("../images/pics/bar.jpg") no-repeat;
+        background-size: cover;
+        display: block;
+        top: 7px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    header>section>ul:nth-child(2){
+        display: none;
+    }
+    header>section>ul:nth-child(2)>li{
+        display: none;
+    }
+
+    header>section>ul:nth-child(3){
+        display: block;
+        float: left;
+        margin-top: 10px;
+    }
+
+    header >section>ul:nth-child(3)>li{
+        display: block;
+        float: right;
+    }
+
+    header >section>ul:nth-child(3)>li:nth-child(1){
+        margin: 15px;
+        display: block;
+    }
+    header >section>ul:nth-child(3)>ul:nth-child(3){
+        display: none;
+    }
+    header .search{
+        width: 22px;
+        height: 22px;
+        display: block;
+        margin-top: 24px;
+        float: left;
+    }
+    header .search{
+
+    }
+    .search input{
+        float:left;
+    }
+    .search input[type=submit]{
+        width: 22px;
+        height: 22px;
+    }
+
+    nav > ul {
+        width: 100%;
+        display: block;
+    }
+    nav > ul > li {
+        display: block;
+        width: 20%;
+        float: left;
+    }
+    header nav{
+        display: block;
+        width: 50%;
+        float: right;
+    }
+    header nav > ul > li > a {
+        font-size: 16px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    .search {
+        width:200px;
+        height: 22px;
+    }
+    input[name=search]::-webkit-input-placeholder,input[name=search]::-moz-placeholder{
+        color: black;
+    }
+    input[name=search]::-moz-placeholder{
+        color: black;
+    }
+    input[name=search]{
+        display: block;
+        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background-size: 15px;
+        width:170px;
+        height: 22px;
+        border-radius: 5px;
+        outline-style: none;
+        padding-right:20px;
+        border-width:  0 1px 0 0;
+        border-style: solid;
+        border-color: #000000;
+        transition: 1s;
+        color: #000000;
+    }
+}
+
+@media (max-width: 999px) {
+    header search{
+        margin-left: 10px;
+        margin-top: 24px;
+    }
+    input[name=search]::-webkit-input-placeholder{
+        color: transparent;
+    }
+    input[name=search]::-moz-placeholder {
+        color: transparent;
+    }
+
+    input[name=search]{
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background: url("/images/icons/search_icon_main_white.png") no-repeat center #000000;
+        background-size: 22px;
+        transition: 1s;
+        color: #000000;
+        border: none;
+        cursor:pointer;
+    }
+    input[name=search]:focus + input{
+
+    }
+    input[name=search]:focus{
+        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background-size: 15px;
+        border-radius: 5px;
+        outline-style: none;
+        color: grey;
+        padding-right:20px;
+        border-right: 1px solid #000000;
+        cursor:text;
+    }
+    input[name=search]:focus::-webkit-input-placeholder,input[name=search]::-moz-placeholder{
+        color: black;
+    }
+    input[name=search]:focus::-moz-placeholder{
+        color: black;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 999px) {
+    input[name=search]:focus{
+        width:170px;
+    }
+    .container {
+        background: #049cFF;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 900px) {
+    /*minimise search*/
+    .container {
+        background: #0F9FFF;
+    }
+}
+
+@media (max-width: 739px) {
+
+    .container {
+        background: #123FFF;
+    }
+
+    /*
+    *header*****************************************************
+    */
+    /*minimize logo*/
+    .closed #logo {
+        background: url("../images/logo_mini.png") no-repeat center;
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin-top: 9px
+    }
+    #profile >li:nth-child(1)>a{
+        background: url("../images/pics/bar.jpg") no-repeat;
+        background-size: cover;
+        display: block;
+        top: 7px;
+        left: 20px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        /*border: 1px solid blueviolet;*/
+        margin-top: 20px;
+    }
+
+    .closed search{
+        width: 10%;
+        height: 22px;
+        display: block;
+        margin-top: 24px;
+        float: left;
+    }
+
+    input[name=search]:focus{
+        width: 670%;
+    }
+
+    /*hide all nav and settings*/
+    nav {
+        display: none;
+    }
+    header{
+        position: fixed;
+        display: block;
+    }
+    main{
+        margin-top: 70px;
+    }
+    header>section>ul:nth-child(3)>li:nth-child(1){
+        float: right;
+    }
+    header>section>ul:nth-child(3)>li:nth-child(2){
+        margin: 15px;
+        display: block;
+        float: right;
+        /*border: 1px solid #0F9FFF;*/
+    }
+    header >section>ul:nth-child(3)>li:nth-child(3){
+        display: block;
+    }
+    /*header - build new structure*/
+
+    /*hamburger or back*/
+    header>section>ul:nth-child(2){
+        display: block;
+        float: right;
+    }
+
+    header>section>ul:nth-child(2)>li:not(.lead){
+        display: none;
+    }
+    header>section>ul:nth-child(2)>li.lead>a, header>section>ul:nth-child(2)>li.lead{
+        display: block;
+    }
+
+    .closed section>ul:nth-child(3){
+        clear: both;
+        /*border: 1px solid yellowgreen;*/
+        display: none;
+    }
+    .opened #logo{
+        display: none;
+    }
+    .opened section{
+        right: 0;
+        width: 100%;
+        /*height: 200px;*/
+        position: absolute;
+        display: block;
+        background: #000000;
+    }
+    .opened search{
+        display:none;
+    }
+    .opened section>ul:nth-child(3){
+        display: block;
+    }
+    .opened nav {
+        display: block;
+    }
+
+    /**************************************************end header*/
+}
