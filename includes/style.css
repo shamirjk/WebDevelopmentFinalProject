@@ -26,24 +26,15 @@ header, main, footer, section, article, nav {
 }
 
 header {
-    background-color: #212121;
+    background-color: #777777;
     height: 70px;
     width: 100%;
-    transition: 2s;
 }
-
-header > section {
-    display: block;
-    max-width: 1000px;
-    padding: 0 10px;
-    margin: 0 auto;
-}
-
 ul {
     list-style: none;
 }
 header>section>ul:nth-child(2){
-    margin: 23px 0 0 0;
+    margin: 23px 23px 0 0;
     width: 25px;
     height: 25px;
 }
@@ -66,18 +57,27 @@ nav > ul > li > a {
     color: #ffffff;
     transition: background-color 1s;
 }
-nav > ul > li > a:hover{
-    text-decoration: none; /*cancel butstrap*/
-    color: #ffffff; /*cancel butstrap*/
-    background-color: #000000;
-    font-weight: bold;
-}
-header >section>ul:nth-child(3)>li:nth-child(1)>a {
+
+#alert{
     background: url("../images/icons/bell_icon.gif") no-repeat;
     background-size: 20px;
     width: 20px;
     height: 20px;
     display: block;
+    position: relative;
+}
+#alert>article{
+    background-color: #123FFF;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top:-10px;
+    left: -10px;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+    line-height:20px;
+
 }
 header >section>ul:nth-child(3)>ul:nth-child(3){
     clear: both;
@@ -105,19 +105,55 @@ main {
     margin: 0 auto;
     padding: 10px;
 }
-header .search{
-    position: relative;
-}
+
 #logo {
     display: block;
 }
 
-/*main input search*/
+/*******search bar*******/
+#searchBar{
+    padding-top:24px;
+    position:relative;
+    float: left;
+}
+#searchBar form{
+    display: block;
+    position: absolute;
+}
 input[name=search]{
+    height: 22px;
+    border-radius: 5px;
+    outline-style: none;
     direction: rtl;
+    color: #000000;
+    border: none;
 }
 
+input[type=submit]{
+    border: none;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    top:0;
+    right: 0;
+    background-color: transparent;
+    border-radius: 5px;
+}
+/******end search bar*****/
+
 @media (min-width: 740px) {
+    header > section {
+        display: block;
+        max-width: 1000px;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+    nav > ul > li > a:hover{
+        text-decoration: none; /*cancel butstrap*/
+        color: #ffffff; /*cancel butstrap*/
+        background-color: #000000;
+        font-weight: bold;
+    }
     /*
     *header
     */
@@ -164,25 +200,9 @@ input[name=search]{
         margin: 15px;
         display: block;
     }
-    header >section>ul:nth-child(3)>ul:nth-child(3){
+    header >section>ul:nth-child(3) ul{
+        position: absolute;
         display: none;
-    }
-    header .search{
-        width: 22px;
-        height: 22px;
-        display: block;
-        margin-top: 24px;
-        float: left;
-    }
-    header .search{
-
-    }
-    .search input{
-        float:left;
-    }
-    .search input[type=submit]{
-        width: 22px;
-        height: 22px;
     }
 
     nav > ul {
@@ -211,99 +231,97 @@ input[name=search]{
 }
 
 @media (min-width: 1000px) {
-    .search {
-        width:200px;
-        height: 22px;
-    }
-    input[name=search]::-webkit-input-placeholder,input[name=search]::-moz-placeholder{
-        color: black;
-    }
-    input[name=search]::-moz-placeholder{
-        color: black;
-    }
+    /*******search bar*******/
     input[name=search]{
-        display: block;
+        width:170px;
         background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
-        width:170px;
-        height: 22px;
-        border-radius: 5px;
-        outline-style: none;
+        color: grey;
         padding-right:20px;
-        border-width:  0 1px 0 0;
-        border-style: solid;
-        border-color: #000000;
-        transition: 1s;
-        color: #000000;
+        border-right: 1px solid #000000;
+        cursor:text;
     }
+    input[type=submit]{
+        display: block;
+    }
+    /******end search bar*****/
 }
 
 @media (max-width: 999px) {
-    header search{
-        margin-left: 10px;
-        margin-top: 24px;
+    .container {
+        background: #0F9FFF;
     }
+
+}
+
+@media (min-width: 740px) and (max-width: 999px) {
+
+
+}
+
+@media (max-width: 900px) {
+    .container {
+        background: #0F9FFF;
+    }
+    /******serch bar***/
     input[name=search]::-webkit-input-placeholder{
         color: transparent;
     }
     input[name=search]::-moz-placeholder {
         color: transparent;
     }
-
     input[name=search]{
-        position: absolute;
         width: 22px;
-        height: 22px;
         background: url("/images/icons/search_icon_main_white.png") no-repeat center #000000;
         background-size: 22px;
         transition: 1s;
         color: #000000;
-        border: none;
         cursor:pointer;
     }
-    input[name=search]:focus + input{
-
+    input[type=submit]{
+        display: none;
     }
     input[name=search]:focus{
+        width:170px;
         background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
-        border-radius: 5px;
-        outline-style: none;
         color: grey;
         padding-right:20px;
         border-right: 1px solid #000000;
         cursor:text;
     }
+    input[name=search]:focus+input[type=submit]{
+        display: block;
+    }
     input[name=search]:focus::-webkit-input-placeholder,input[name=search]::-moz-placeholder{
         color: black;
     }
-    input[name=search]:focus::-moz-placeholder{
-        color: black;
-    }
-}
-
-@media (min-width: 740px) and (max-width: 999px) {
-    input[name=search]:focus{
-        width:170px;
-    }
-    .container {
-        background: #049cFF;
-    }
-}
-
-@media (min-width: 740px) and (max-width: 900px) {
-    /*minimise search*/
-    .container {
-        background: #0F9FFF;
-    }
+    /******end search bar*****/
 }
 
 @media (max-width: 739px) {
-
     .container {
         background: #123FFF;
     }
 
+    .overlay {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        background-color: #000000;
+        opacity: 0.65;
+        position: fixed;
+    }
+
+    .closed .overlay {
+        display: none;
+    }
+
+    .opened .overlay{
+        display: block;
+    }
     /*
     *header*****************************************************
     */
@@ -314,56 +332,84 @@ input[name=search]{
         width: 50px;
         height: 50px;
         float: left;
-        margin-top: 9px
+        margin-top: 9px;
     }
-    #profile >li:nth-child(1)>a{
+    #profile{
+        margin-top: 22px;
+        border-top: 1px solid #555555;
+        float: right;
+        width:100%;
+    }
+    #profile>li:nth-child(1){
+        margin:20px 120px 0 0;
+        float: right;
+    }
+    #profileData{
+        margin-right: -120px;
+        clear: both;
+        text-align: right;
+    }
+    #profile>li:nth-child(2)>a{
         background: url("../images/pics/bar.jpg") no-repeat;
         background-size: cover;
         display: block;
-        top: 7px;
-        left: 20px;
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        /*border: 1px solid blueviolet;*/
-        margin-top: 20px;
+        float:right;
+        margin-right: -120px;
     }
-
-    .closed search{
-        width: 10%;
-        height: 22px;
-        display: block;
-        margin-top: 24px;
-        float: left;
+    /********nav bar******/
+    nav{
+        border-top: 1px solid #555555;
+        width:100%;
+        clear: both;
     }
-
-    input[name=search]:focus{
-        width: 670%;
-    }
-
-    /*hide all nav and settings*/
-    nav {
+    .closed nav {
         display: none;
     }
+    nav > ul > li {
+        display: block;
+        width: 100%;
+    }
+    nav > ul > li > a {
+        font-size: 18px;
+        text-align: right;
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding-right: 30px;
+    }
+    nav > ul > li > a:active{
+        text-decoration: none; /*cancel butstrap*/
+        color: #ffffff; /*cancel butstrap*/
+        background-color: #000000;
+        font-weight: bold;
+    }
+    /******end nav bar***/
     header{
-        position: fixed;
         display: block;
     }
-    main{
+
+    /*main{
         margin-top: 70px;
-    }
+    }*/
+
     header>section>ul:nth-child(3)>li:nth-child(1){
         float: right;
     }
+
     header>section>ul:nth-child(3)>li:nth-child(2){
         margin: 15px;
         display: block;
         float: right;
-        /*border: 1px solid #0F9FFF;*/
     }
-    header >section>ul:nth-child(3)>li:nth-child(3){
+
+    #profile li:nth-child(3){
         display: block;
     }
+
     /*header - build new structure*/
 
     /*hamburger or back*/
@@ -371,31 +417,34 @@ input[name=search]{
         display: block;
         float: right;
     }
-
-    header>section>ul:nth-child(2)>li:not(.lead){
+    .hambBack>li{
+        margin-right: 50px;
+    }
+    .hambBack>li:not(.lead){
         display: none;
     }
-    header>section>ul:nth-child(2)>li.lead>a, header>section>ul:nth-child(2)>li.lead{
+
+    .hambBack>li.lead>a, .hambBack>li.lead{
         display: block;
     }
 
     .closed section>ul:nth-child(3){
         clear: both;
-        /*border: 1px solid yellowgreen;*/
         display: none;
     }
+
     .opened #logo{
         display: none;
     }
     .opened section{
         right: 0;
-        width: 100%;
-        /*height: 200px;*/
+        width: 300px;
         position: absolute;
         display: block;
-        background: #000000;
+        background: #777777;
+        z-index: 20;
     }
-    .opened search{
+    .opened #searchBar{
         display:none;
     }
     .opened section>ul:nth-child(3){
@@ -404,6 +453,5 @@ input[name=search]{
     .opened nav {
         display: block;
     }
-
     /**************************************************end header*/
 }
