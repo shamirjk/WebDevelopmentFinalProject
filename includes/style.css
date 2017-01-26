@@ -254,12 +254,24 @@ input[type=submit]{
 
 }
 
-@media (min-width: 740px) and (max-width: 999px) {
+@media (min-width: 900px){
 
-
+    input[name=search]{
+        width:170px;
+        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background-size: 15px;
+        color: grey;
+        padding-right:20px;
+        border-right: 1px solid #000000;
+        cursor:text;
+    }
+    input[type=submit]{
+        display: block;
+    }
+    /******end search bar*****/
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
     .container {
         background: #0F9FFF;
     }
@@ -272,10 +284,10 @@ input[type=submit]{
     }
     input[name=search]{
         width: 22px;
-        background: url("/images/icons/search_icon_main_white.png") no-repeat center #000000;
+        background: url("../images/icons/search_icon_main_white.png") no-repeat center #777777;
         background-size: 22px;
         transition: 1s;
-        color: #000000;
+        color: transparent;
         cursor:pointer;
     }
     input[type=submit]{
@@ -283,7 +295,7 @@ input[type=submit]{
     }
     input[name=search]:focus{
         width:170px;
-        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background: url("../images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
         color: grey;
         padding-right:20px;
@@ -345,6 +357,7 @@ input[type=submit]{
         float: right;
     }
     #profileData{
+        margin-top: 100px;
         margin-right: -120px;
         clear: both;
         text-align: right;
@@ -358,6 +371,9 @@ input[type=submit]{
         border-radius: 50%;
         float:right;
         margin-right: -120px;
+    }
+    #searchBar{
+        padding-left: 10px;
     }
     /********nav bar******/
     nav{
