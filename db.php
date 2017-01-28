@@ -4,6 +4,7 @@
     $dbuser = "auxstudDB6c";
     $dbpass = "auxstud6cDB1!";
     $dbname = "auxstudDB6c";
+
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
     //testing connection success
