@@ -9,6 +9,7 @@ body {
 
 a {
     text-decoration: none;
+
 }
 
 a:hover {
@@ -171,8 +172,8 @@ input[type=submit]{
 
     /*profile and pic of profile*/
     #profile>li:nth-child(2)>a {
-        background: url("../images/pics/bar.jpg") no-repeat;
-        background-size: cover;
+        /*background: url("../images/pics/bar.jpg") no-repeat;*/
+        /*background-size: cover;*/
         display: block;
         top: 7px;
         left: 20px;
@@ -363,8 +364,8 @@ input[type=submit]{
         text-align: right;
     }
     #profile>li:nth-child(2)>a{
-        background: url("../images/pics/bar.jpg") no-repeat;
-        background-size: cover;
+        /*background: url("../images/pics/bar.jpg") no-repeat;*/
+        /*background-size: cover;*/
         display: block;
         width: 80px;
         height: 80px;
