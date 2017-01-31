@@ -21,16 +21,15 @@ $(document).ready( function (){
 });
 
 var loadProfile = function(){
-        var dataString = "user=" + currentUser['user'];
-        $.ajax({
-            type: "POST",
-            url: "get_user_data.php",
-            data: dataString,
-            cache: true,
-            success: function (html) {
-                console.log(html);
-                $('#profileData').html(html);
-            }
-
-        });
+    var dataString = "user=" + currentUser['user'];
+    $.ajax({
+        type: "POST",
+        url: "get_user_data.php",
+        data: dataString,
+        cache: true,
+        success: function (html) {
+            console.log(html);
+            $('#profileData').html(html);
+        }
+    });
 };
