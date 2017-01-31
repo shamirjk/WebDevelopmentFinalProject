@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+    <script src="includes/jquery-3.1.1.slim.min.js"></script>
+    <script src="includes/pattern.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="includes/style.css">
+    <!--<link rel="stylesheet" href="includes/style.css">-->
+    <title>Sport Control Manager</title>
+</head>
+<body>
+<div class="container">
+    <header class="closed">
+        <article class="overlay"></article>
+        <section>
+            <a href="index.html" id="logo"></a>
+            <ul class="hambBack">
+                <li><a href="#">B</a></li>
+                <li class="lead"><a href="#" id="hamburger"></a></li>
+            </ul>
+            <section id="searchBar" >
+                <form action="#" method="post">
+                    <input type="search" name="search" placeholder="Search..">
+                    <input type="submit" value="">
+                </form>
+            </section>
+        </section>
+    </header>
+    <main>
+        <h1>Log in</h1>
+        <ul>
+            <li><a href="index.html?user=admin">מנהל</a></li>
+            <li><a href="index.html?user=coach">מאמן</a></li>
+            <li><a href="index.html?user=client">מתאמן</a></li>
+        </ul>
+    </main>
+</div>
+<script>
+    $("#hamburger, .overlay").click(function(){
+        $("header").toggleClass(function(){
+            if($(this).is(".closed")){
+                return "opened";
+            }else return "closed";
+        });
+    });
+</script>
+</body>
+</html>
