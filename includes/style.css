@@ -140,7 +140,9 @@ input[type=submit]{
     border-radius: 5px;
 }
 /******end search bar*****/
-
+.notActiveUser{
+    display: none;
+}
 @media (min-width: 740px) {
     header > section {
         display: block;
@@ -204,7 +206,11 @@ input[type=submit]{
         position: absolute;
         display: none;
     }
-
+    nav{
+        display: block;
+        width: 50%;
+        float: right;
+    }
     nav > ul {
         width: 100%;
         display: block;
@@ -212,11 +218,6 @@ input[type=submit]{
     nav > ul > li {
         display: block;
         width: 20%;
-        float: left;
-    }
-    header nav{
-        display: block;
-        width: 50%;
         float: right;
     }
     header nav > ul > li > a {
@@ -227,7 +228,6 @@ input[type=submit]{
         height: 70px;
         line-height: 70px;
     }
-
 }
 
 @media (min-width: 1000px) {
@@ -275,7 +275,7 @@ input[type=submit]{
     .container {
         background: #0F9FFF;
     }
-    /******serch bar***/
+    /******search bar***/
     input[name=search]::-webkit-input-placeholder{
         color: transparent;
     }
