@@ -75,21 +75,34 @@
    } else {
         echo "<p>Error creating table: " .mysqli_error($conn)."</p>";
    }
-    if (mysqli_query($conn,
+   if (mysqli_query($conn,
            "CREATE TABLE tbl_client_207(
            id VARCHAR(30) NOT NULL,
            name VARCHAR(30) NOT NULL,
            phone VARCHAR(30) NOT NULL,
            city VARCHAR(30) NOT NULL,
            street VARCHAR(30) NOT NULL,
+           email VARCHAR(30) NOT NULL,
            PRIMARY KEY(id)
            )"))
-    {
+   {
         echo "<p>Table tbl_client_207 created successfully</p>";
-    } else {
+   } else {
         echo "<p>Error creating table: \n" .mysqli_error($conn)."</p>";
-    }
+   }
+   if (mysqli_query($conn,
+               "CREATE TABLE tbl_user_207(
+               id VARCHAR(30) NOT NULL,
+               user VARCHAR(30) NOT NULL,
+               name VARCHAR(30) NOT NULL,
+               email VARCHAR(30) NOT NULL,
+               PRIMARY KEY(id)
+               )"))
+   {
+        echo "<p>Table tbl_client_207 created successfully</p>";
+   } else {
+        echo "<p>Error creating table: \n" .mysqli_error($conn)."</p>";
+   }
 
-
-   mysqli_close($conn);
+   //mysqli_close($conn);
 ?>
