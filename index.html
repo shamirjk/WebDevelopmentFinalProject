@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
-    <script src="includes/jquery-3.1.1.slim.min.js"></script>
-    <script src="includes/pattern.js"></script>
+    <script src="includes/jquery-3.1.1.min.js"></script>
+    <!--<script src="includes/pattern.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,11 +13,7 @@
     <link rel="stylesheet" href="includes/style.css">
     <title> Sport Control Manager</title>
     <!--<link rel="stylesheet" href="includes/style.css">-->
-    <title>Sport Control Manager</title>
-    <style>
-
-    </style>
-
+    <script src="includes/activeNotActive.js"></script>
 </head>
 <body>
 <div class="container">
@@ -37,27 +33,36 @@
                 </li>
                 <li><a href="#" id="profileImg"></a>
                     <ul id = "profileData">
-                        <li>Full name</li>
+                        <!--<li>Full name</li>
                         <li>maildddddddd@gdgg.com</li>
                         <li>positon maneger</li>
                         <li><a href="#">edit</a></li>
-                        <li><a href="#">Log Out</a></li>
+                        <li><a href="index.html">Log Out</a></li>-->
                     </ul>
                 </li>
             </ul>
-            <section id="searchBar">
+            <section id="searchBar" >
                 <form action="#" method="post">
                     <input type="search" name="search" placeholder="Search..">
                     <input type="submit" value="">
                 </form>
             </section>
-            <nav>
-                <ul id="adminMainMenu">
+            <nav id="mainMenu">
+                <ul class="admin notActiveUser">
                     <li><a class="active" href="#">דוחות</a></li>
                     <li><a href="#">מתקנים</a></li>
                     <li><a href="#">מאמנים</a></li>
                     <li><a href="#">מתאמנים</a></li>
                     <li><a href="#">אימונים</a></li>
+                </ul>
+                <ul class="coach notActiveUser">
+                    <li><a class="active" href="#">דוחות</a></li>
+                    <li><a href="#">מתאמנים</a></li>
+                    <li><a href="#">אימונים</a></li>
+                </ul>
+                <ul class="client notActiveUser">
+                    <li><a href="#">אימונים</a></li>
+                    <li><a class="active" href="#">מנוי</a></li>
                 </ul>
             </nav>
         </section>
