@@ -28,8 +28,23 @@ var loadProfile = function(){
         data: dataString,
         cache: true,
         success: function (html) {
-            console.log(html);
+            //console.log(html);
             $('#profileData').html(html);
         }
+    });
+
+    $.getJSON("includes/user_pic.json", function (data) {
+        console.log("in get json");
+        $.each(data.profileUrl, function (k, v) {
+            console.log("in data json");
+            if(v.id == currentUser['user']){
+                console.log(v.id);
+                var backgroundUrl = v.url;
+                console.log($("#profileImg").css(
+                    {"background":"url(" + backgroundUrl +") no-repeat",
+                    "background-size":"cover"}
+                ));
+            }
+        });
     });
 };
