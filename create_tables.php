@@ -96,7 +96,7 @@
                user VARCHAR(30) NOT NULL,
                name VARCHAR(30) NOT NULL,
                email VARCHAR(30) NOT NULL,
-               PRIMARY KEY(id)
+               PRIMARY KEY(id, user)
                )"))
    {
         echo "<p>Table tbl_client_207 created successfully</p>";
