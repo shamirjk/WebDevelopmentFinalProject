@@ -7,6 +7,47 @@ body {
 
 }
 
+h1{
+    direction:rtl;
+}
+
+
+/**log in style*/
+#login h1{
+    text-align:center;
+    margin-top: 20%
+}
+#login form{
+    width: 300px;
+    margin:auto;
+}
+
+label.glyphicon{
+    border-radius:0 4px 4px 0!important;
+}
+.loinBtn{
+    width:100%;
+    float: right;
+    margin-top:40px;
+}
+.loinBtn>div{
+    width:50%;
+}
+.loinBtn select{
+    width:100%;
+}
+.loinBtn>button{
+    width: 50%;
+}
+input{
+    direction: rtl;
+}
+.loinBtn select{
+    background:#ffffff;
+    height:33px;
+}
+/*****************/
+
 a {
     text-decoration: none;
 
@@ -140,11 +181,19 @@ input[type=submit]{
     background-color: transparent;
     border-radius: 5px;
 }
+/**login bar*/
 /******end search bar*****/
 .notActiveUser{
     display: none;
 }
 @media (min-width: 740px) {
+
+    /***log in***/
+
+    h4{
+        text-align:right;
+    }
+    /*********/
     header > section {
         display: block;
         max-width: 1000px;
@@ -313,6 +362,13 @@ input[type=submit]{
 }
 
 @media (max-width: 739px) {
+
+    h4{
+        display: none;
+    }
+    #login>form>div:nth-child(4){
+        margin-top: 40px ;
+    }
     .container {
         background: #123FFF;
     }
