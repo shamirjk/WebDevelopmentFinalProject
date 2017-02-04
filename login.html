@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
-    <script src="includes/jquery-3.1.1.slim.min.js"></script>
+    <script src="includes/jquery-3.1.1.min.js"></script>
     <script src="includes/pattern.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="includes/style.css">
-    <!--<link rel="stylesheet" href="includes/style.css">-->
     <title>Sport Control Manager</title>
 </head>
 <body>
@@ -20,10 +22,6 @@
         <article class="overlay"></article>
         <section>
             <a href="index.html" id="logo"></a>
-            <ul class="hambBack">
-                <li><a href="#">B</a></li>
-                <li class="lead"><a href="#" id="hamburger"></a></li>
-            </ul>
             <section id="searchBar" >
                 <form action="#" method="post">
                     <input type="search" name="search" placeholder="Search..">
@@ -32,8 +30,34 @@
             </section>
         </section>
     </header>
-    <main>
-        <h1>Log in</h1>
+    <main id="login">
+        <h1>כניסה</h1>
+        <form action="#" method="post">
+            <h4 >תאודת זהות</h4>
+            <div class="input-group">
+                <input type="text" class="form-control" pattern="[0-9]{10}" name="userId" placeholder="הקש תז..." required>
+                <div class="input-group-btn">
+                    <label class="glyphicon glyphicon-user form-control sr-only"></label>
+                </div>
+            </div>
+            <h4>סיסמה</h4>
+            <div class="input-group">
+                <input type="password" pattern="{8}" class="form-control" name="userPass" aria-label="..." placeholder="הקש סיסמה..." required>
+                <div class="input-group-btn">
+                    <label class="glyphicon glyphicon-pencil form-control sr-only"></label>
+                </div>
+            </div>
+            <div class="btn-group loinBtn" role="group">
+                <div class="btn-group" role="group">
+                    <select name="user" class="btn btn-default dropdown-toggle">
+                        <option value="volvo">מנהל</option>
+                        <option value="saab">מאמן</option>
+                        <option value="fiat">מתאמן</option>
+                    </select>
+                </div>
+                <button type="submit" class=" btn btn-default " > כניסה <span class="glyphicon glyphicon-log-in"></span></button>
+            </div>
+        </form>
         <ul>
             <li><a href="index.html?user=admin">מנהל</a></li>
             <li><a href="index.html?user=coach">מאמן</a></li>
