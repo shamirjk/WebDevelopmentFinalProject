@@ -5,17 +5,18 @@ $(document).ready(function () {
         var dataString = "user=" + user + "&id=" + userId;
         console.log(userId + "  " + user);
         $.ajax({
-            type: "POST",
-            url: "user_varification.php",
+            type: 'POST',
+            url: '/user_verification.php',
             data: dataString,
             cache: true,
             success: function(data){
                 if(data == "true"){
-                    $("form").attr("action","index.html?user=" + user + "&id=" + userId);
+                    window.location.href = "index.html?user=" + user + "&id=" + userId;
+
                 } else if(data == "false"){
-                    $("wrong").html("נתונים שגוים");
+                    $("#wrong").html("נתונים שגויים");
                 } else{
-                    $("wrong").html(data);
+                    $("#wrong").html(data);
                 }
             }
         });
