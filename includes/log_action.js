@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    $("form").submit(function () {
+    $("form").submit(function (e) {
+        e.preventDefault();
         var userId = $("input[name=userId]").val();
         var user = $("select[name=user]").val();
         var dataString = "user=" + user + "&id=" + userId;
@@ -12,7 +13,6 @@ $(document).ready(function () {
             success: function(data){
                 if(data == "true"){
                     window.location.href = "index.html?user=" + user + "&id=" + userId;
-
                 } else if(data == "false"){
                     $("#wrong").html("נתונים שגויים");
                 } else{

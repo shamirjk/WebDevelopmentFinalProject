@@ -220,9 +220,9 @@ input[type=submit]{
     /*settings panel*/
 
     /*profile and pic of profile*/
-    #profile>li:nth-child(2)>a {
-        /*background: url("../images/pics/bar.jpg") no-repeat;*/
-        /*background-size: cover;*/
+    #profileImg{
+        background: url("../images/users/log.png") no-repeat;
+        background-size: cover;
         display: block;
         top: 7px;
         left: 20px;
