@@ -25,7 +25,7 @@ $(document).ready( function (){
     $("." + currentUser['user']).each(function(){
         $(this).removeClass("notActiveUser").addClass("activeUser");
     });
-    $("#logo").attr("href","index.html?user=" + currentUser['user']);
+    $("#logo").attr("href","index.html?user=" + currentUser['user'] + "&id=" +currentUser['id']);
 
     loadProfile();
 });
@@ -50,7 +50,8 @@ var loadProfile = function(){
                 console.log(v.id);
                 var backgroundUrl = v.url;
                 console.log($("#profileImg").css(
-                    {"background":"url(" + backgroundUrl +") no-repeat"}
+                    {"background":"url(" + backgroundUrl +") no-repeat",
+                    "background-size":"cover"}
                 ));
             }
         });

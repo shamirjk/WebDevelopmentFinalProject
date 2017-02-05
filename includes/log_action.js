@@ -14,7 +14,7 @@ $(document).ready(function () {
                 if(data == "true"){
                     window.location.href = "index.html?user=" + user + "&id=" + userId;
                 } else if(data == "false"){
-                    $("#wrong").html("נתונים שגויים");
+                    $("#wrong").html("!!!נתונים שגויים");
                 } else{
                     $("#wrong").html(data);
                 }
