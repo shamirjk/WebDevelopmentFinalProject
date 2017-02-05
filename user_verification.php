@@ -9,14 +9,14 @@
         $num_rows = mysqli_num_rows($result);
 
         if ($num_rows < 1 ) {
-            $exists="We couldn't find your ID in DB. Please call the Office";
+            echo "false";
         }
         else{
             echo "true";
         }
     } else {
-      echo "Couldn't issue database query<br>";
-      echo mysqli_error($conn);
+          echo "Couldn't issue database query<br>";
+          echo mysqli_error($conn);
     }
 
     mysqli_close($conn);

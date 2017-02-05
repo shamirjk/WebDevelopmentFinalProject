@@ -1,14 +1,24 @@
 var currentUser = (function() {
-        var namesAndValues = window.location.search.substring(1).split("&");
-        var parameters = [];
-        for ( var varPlusVal in namesAndValues) {
-            parameters[namesAndValues[varPlusVal].split("=")[0]] = namesAndValues[varPlusVal].split("=")[1];
+    var data = window.location.search.substring(1);
+    var namesAndValues = data.split("&");
+
+    $.ajax({
+        type: 'POST',
+        url: '/user_verification.php',
+        data: data,
+        cache: true,
+        success: function(html){
+            if(html != "true"){
+                window.location.href = "login.html";
+            }
         }
-        console.log(parameters['user']);
-        if(parameters['user'] == undefined || (parameters['user'] != "admin" && parameters['user'] != "client" && parameters['user'] != "coach")){
-            window.location.href = "login.html";
-        }
-        return parameters;
+    });
+    var parameters = [];
+    for ( var varPlusVal in namesAndValues) {
+        parameters[namesAndValues[varPlusVal].split("=")[0]] = namesAndValues[varPlusVal].split("=")[1];
+    }
+
+    return parameters;
 })();
 
 $(document).ready( function (){
@@ -21,14 +31,13 @@ $(document).ready( function (){
 });
 
 var loadProfile = function(){
-    var dataString = "user=" + currentUser['user'];
+    var dataString = "user=" + currentUser['user'] + "&id=" +currentUser['id'];
     $.ajax({
         type: "POST",
         url: "get_user_data.php",
         data: dataString,
         cache: true,
         success: function (html) {
-            //console.log(html);
             $('#profileData').html(html);
         }
     });
@@ -37,12 +46,11 @@ var loadProfile = function(){
         console.log("in get json");
         $.each(data.profileUrl, function (k, v) {
             console.log("in data json");
-            if(v.id == currentUser['user']){
+            if(v.id == currentUser['id']){
                 console.log(v.id);
                 var backgroundUrl = v.url;
                 console.log($("#profileImg").css(
-                    {"background":"url(" + backgroundUrl +") no-repeat",
-                    "background-size":"cover"}
+                    {"background":"url(" + backgroundUrl +") no-repeat"}
                 ));
             }
         });
