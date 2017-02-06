@@ -11,7 +11,9 @@ h1{
     direction:rtl;
 }
 
-
+.breadcrumb{
+    background: #ffffff;
+}
 /**log in style*/
 #login h1{
     text-align:center;
@@ -21,7 +23,11 @@ h1{
     width: 300px;
     margin:auto;
 }
-
+#wrong{
+    text-align: center;
+    margin-top: 100px;
+    color: darkred;
+}
 label.glyphicon{
     border-radius:0 4px 4px 0!important;
 }
@@ -220,7 +226,7 @@ input[type=submit]{
     /*settings panel*/
 
     /*profile and pic of profile*/
-    #profileImg{
+    #profileImg {
         background: url("../images/users/log.png") no-repeat;
         background-size: cover;
         display: block;
@@ -229,32 +235,45 @@ input[type=submit]{
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        /*position: relative;*/
     }
-    header>section>ul:nth-child(2){
+    .hambBack{
         display: none;
     }
-    header>section>ul:nth-child(2)>li{
+    .hambBack>li{
         display: none;
     }
 
-    header>section>ul:nth-child(3){
+    #profile{
         display: block;
         float: left;
         margin-top: 10px;
     }
 
-    header >section>ul:nth-child(3)>li{
+    #profile>li{
         display: block;
         float: right;
     }
 
-    header >section>ul:nth-child(3)>li:nth-child(1){
+    #profile>li:nth-child(1){
         margin: 15px;
         display: block;
     }
-    header >section>ul:nth-child(3) ul{
+    #profileData{
+        background: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #c6c6c6;
         position: absolute;
         display: none;
+        text-align: right;
+        padding: 20px;
+
+    }
+    #profileData>*{
+        margin: 10px;
+    }
+    #profileImg:hover+#profileData,#profileData:hover{
+        display:block;
     }
     nav{
         display: block;
@@ -363,7 +382,7 @@ input[type=submit]{
 
 @media (max-width: 739px) {
 
-    h4{
+    #login h4:not(#wrong){
         display: none;
     }
     #login>form>div:nth-child(4){
