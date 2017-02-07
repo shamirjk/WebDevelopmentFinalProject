@@ -4,7 +4,7 @@ var currentUser = (function() {
 
     $.ajax({
         type: 'POST',
-        url: '/user_verification.php',
+        url: 'user_verification.php',
         data: data,
         cache: true,
         success: function(html){
@@ -25,7 +25,12 @@ $(document).ready( function (){
     $("." + currentUser['user']).each(function(){
         $(this).removeClass("notActiveUser").addClass("activeUser");
     });
-    $("#logo").attr("href","index.html?user=" + currentUser['user'] + "&id=" +currentUser['id']);
+    $("#logo,.breadcrumb" + " a[href='index.html']"
+    ).attr("href","index.html?user=" + currentUser['user'] + "&id=" +currentUser['id']);
+
+    $("." + currentUser['user'] + " a[href='training.html']," +
+        "breadcrumb" + " a[href='training.html']"
+    ).attr("href","training.html?user="  + currentUser['user'] + "&id=" +currentUser['id']);
 
     loadProfile();
 });

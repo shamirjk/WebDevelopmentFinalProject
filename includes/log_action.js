@@ -7,7 +7,7 @@ $(document).ready(function () {
         console.log(userId + "  " + user);
         $.ajax({
             type: 'POST',
-            url: '/user_verification.php',
+            url: 'user_verification.php',
             data: dataString,
             cache: true,
             success: function(data){

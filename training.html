@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
     <script src="includes/jquery-3.1.1.min.js"></script>
+    <script src="includes/activeNotActive.js"></script>
+    <script src="includes/get_training_table.js"></script>
     <!--<script src="includes/pattern.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -13,7 +15,7 @@
     <link rel="stylesheet" href="includes/style.css">
     <title> Sport Control Manager</title>
     <!--<link rel="stylesheet" href="includes/style.css">-->
-    <script src="includes/activeNotActive.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -33,11 +35,6 @@
                 </li>
                 <li><a href="#" id="profileImg"></a>
                     <ul id = "profileData">
-                        <!--<li>Full name</li>
-                        <li>maildddddddd@gdgg.com</li>
-                        <li>positon maneger</li>
-                        <li><a href="#">edit</a></li>
-                        <li><a href="index.html">Log Out</a></li>-->
                     </ul>
                 </li>
             </ul>
@@ -53,15 +50,15 @@
                     <li><a href="#">מתקנים</a></li>
                     <li><a href="#">מאמנים</a></li>
                     <li><a href="#">מתאמנים</a></li>
-                    <li><a href="training.html">אימונים</a></li>
+                    <li><a href="#">אימונים</a></li>
                 </ul>
                 <ul class="coach notActiveUser">
                     <li><a class="active" href="#">דוחות</a></li>
                     <li><a href="#">מתאמנים</a></li>
-                    <li><a href="training.html">אימונים</a></li>
+                    <li><a href="#">אימונים</a></li>
                 </ul>
                 <ul class="client notActiveUser">
-                    <li><a href="training.html">אימונים</a></li>
+                    <li><a href="#">אימונים</a></li>
                     <li><a class="active" href="#">מנוי</a></li>
                 </ul>
             </nav>
@@ -69,9 +66,20 @@
     </header>
 
     <main>
-        <h1>ברוכים הבאים</h1>
-        <section>
-
+        <ol class="breadcrumb">
+            <li><a href="index.html">בית</a></li>
+            <li class="active">אימונים</li>
+        </ol>
+        <h1>אימונים</h1>
+        <section class="admin notActiveUser">
+            <a href="add_training.html">add</a>
+            <section class="trainigTable">admin table</section>
+        </section>
+        <section class="coach notActiveUser">
+            <section class="trainigTable">coach table</section>
+        </section>
+        <section class="client notActiveUser">
+            <section class="trainigTable">client table</section>
         </section>
     </main>
 </div>
