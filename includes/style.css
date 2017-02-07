@@ -15,10 +15,7 @@ h1{
     background: #ffffff;
 }
 /**log in style*/
-#login h1{
-    text-align:center;
-    margin-top: 20%
-}
+
 #login form{
     width: 300px;
     margin:auto;
@@ -50,7 +47,7 @@ input{
 }
 .loinBtn select{
     background:#ffffff;
-    height:33px;
+    height:34px;
 }
 /*****************/
 
@@ -149,7 +146,7 @@ header >section>ul:nth-child(3)>ul:nth-child(3){
 main {
     max-width: 1000px;
     height: 700px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 0 auto;
     padding: 10px;
 }
@@ -193,7 +190,10 @@ input[type=submit]{
     display: none;
 }
 @media (min-width: 740px) {
-
+    #login h1{
+        text-align:center;
+        margin-top: 20%
+    }
     /***log in***/
 
     h4{
@@ -297,6 +297,63 @@ input[type=submit]{
         height: 70px;
         line-height: 70px;
     }
+    main table{
+        width: 95%;
+        margin: 0 auto;
+        background: #ffefee;
+        padding: 10px;
+        border-collapse: collapse;
+    }
+    .admin table tr td:nth-child(1){
+        width: 30px;
+        background: #222FFF;
+    }
+    .admin table tr>td:nth-child(2){
+        width: 13%;
+    }
+    .admin table tr>td:nth-child(3){
+        width: 10%;
+    }
+    .admin table tr>td:nth-child(4){
+        width: 10%;
+    }
+    .admin table tr>td:nth-child(5){
+        width: 27%;
+    }
+    .admin table tr>td:nth-child(6){
+        width: 14%;
+    }
+    .admin table tr>td:nth-child(7){
+        width: 12%;
+    }
+    .admin table tr>td:nth-last-child(1) {
+        width: 30px;
+        background: #7a447a;
+    }
+    .admin table tr>td:nth-last-child(2) {
+        width: 30px;
+        background: #7a888a;
+    }
+    main table *{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        vertical-align: bottom;
+        line-height: 22px;
+        color: #777777;
+        font-size: 14px;
+        border-bottom:1px dotted #c6c6c6;
+        height: 35px;
+        text-align: right;
+    }
+    .tags{
+        border-bottom:none;
+        font-weight: bold;
+    }
+    .tags>*{
+        margin-top: 5px;
+    }
+    /*training table*/
+
+    /*end training table*/
 }
 
 @media (min-width: 1000px) {
@@ -317,9 +374,9 @@ input[type=submit]{
 }
 
 @media (max-width: 999px) {
-    .container {
-        background: #0F9FFF;
-    }
+    /*.container {*/
+        /*background: #0F9FFF;*/
+    /*}*/
 
 }
 
@@ -341,9 +398,9 @@ input[type=submit]{
 }
 
 @media (max-width: 899px) {
-    .container {
-        background: #0F9FFF;
-    }
+    /*.container {*/
+        /*background: #0F9FFF;*/
+    /*}*/
     /******search bar***/
     input[name=search]::-webkit-input-placeholder{
         color: transparent;
@@ -366,7 +423,7 @@ input[type=submit]{
         width:170px;
         background: url("../images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
-        color: grey;
+        /*color: grey;*/
         padding-right:20px;
         border-right: 1px solid #000000;
         cursor:text;
@@ -381,16 +438,32 @@ input[type=submit]{
 }
 
 @media (max-width: 739px) {
+    .closed+main>h1{
+        font-size: 25px;
+        width:200px;
+        text-align: center;
+        right: 0;
+        left: 0;
+        margin: auto;
+        color: #ffffff;
+        top: 22px;
+        position: fixed;
+        z-index:10;
+    }
 
+    main{
+        margin-top: 70px;
+    }
     #login h4:not(#wrong){
         display: none;
+    }
+    #login>form{
+        margin-top: 40%;
     }
     #login>form>div:nth-child(4){
         margin-top: 40px ;
     }
-    .container {
-        background: #123FFF;
-    }
+
 
     .overlay {
         top: 0;
@@ -409,6 +482,9 @@ input[type=submit]{
 
     .opened .overlay{
         display: block;
+    }
+    .opened+main>h1{
+        display: none;
     }
     /*
     *header*****************************************************
@@ -438,6 +514,9 @@ input[type=submit]{
         clear: both;
         text-align: right;
     }
+    #profileData a{
+        color: #c6c6c6;
+    }
     #profile>li:nth-child(2)>a{
         /*background: url("../images/pics/bar.jpg") no-repeat;*/
         /*background-size: cover;*/
@@ -449,6 +528,7 @@ input[type=submit]{
         margin-right: -120px;
     }
     #searchBar{
+        z-index: 21;
         padding-left: 10px;
     }
     /********nav bar******/
@@ -482,6 +562,8 @@ input[type=submit]{
     /******end nav bar***/
     header{
         display: block;
+        position: fixed;
+        z-index: 10;
     }
 
     /*main{
@@ -545,5 +627,9 @@ input[type=submit]{
     .opened nav {
         display: block;
     }
+    .breadcrumb{
+        display: none;
+    }
+
     /**************************************************end header*/
 }
