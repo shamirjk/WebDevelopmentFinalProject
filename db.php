@@ -19,4 +19,5 @@ $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
         die("DB connection failed: " . mysqli_connect_error() . " (" . mysqli_connect_errno() . ")"
         );
     }
+    mysqli_set_charset($con,"utf8_general_ci");
 ?>
