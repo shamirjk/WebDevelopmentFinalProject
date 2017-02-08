@@ -2,74 +2,228 @@
     include("my_db.php");
     if(isset($_POST['user'])){
         if($_POST['user'] == "admin"){
-            echo "<table class = \"myTable\">
+            echo "<table class = \"trainingTable\">
                                 <tr class=\"tags\"> 
-                                    <td><a href=\"#\">3</a></td>
+                                    <td class=\"control\"></td>
                                     <td>מאמן<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></a></td>
-                                    <td>מקצוע</td>
-                                    <td>סוג</td>
-                                    <td>מקום</td>
-                                    <td>שעה</td>
-                                    <td>תאריך</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
+                                    <td>מקצוע<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>סוג<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>מקום<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>שעה<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>תאריך<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td class=\"control\"></td>
+                                    <td class=\"control\"></td>
                                 </tr>
-                                <tr>
-                                    <td><a href=\"#\">3</a></td>
-                                    <td>אבי כהן</td>
-                                    <td>שחיה</td>
-                                    <td>טכניקה</td>
-                                    <td>מרכז ספורט אוניברסיטת ת\"א</td>
-                                    <td>06:00-07:00</td>
-                                    <td>2.1.2017</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
+                                <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
                                 </tr>
-                                <tr>
-                                    <td><a href=\"#\">3</a></td>
-                                    <td>אבי כהן</td>
-                                    <td>שחיה</td>
-                                    <td>טכניקה</td>
-                                    <td>מרכז ספורט אוניברסיטת ת\"א</td>
-                                    <td>06:00-07:00</td>
-                                    <td>2.1.2017</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
-                                </tr><tr>
-                                    <td><a href=\"#\">3</a></td>
-                                    <td>אבי כהן</td>
-                                    <td>שחיה</td>
-                                    <td>טכניקה</td>
-                                    <td>מרכז ספורט אוניברסיטת ת\"א</td>
-                                    <td>06:00-07:00</td>
-                                    <td>2.1.2017</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
-                                </tr><tr>
-                                    <td><a href=\"#\">3</a></td>
-                                    <td>אבי כהן</td>
-                                    <td>שחיה</td>
-                                    <td>טכניקה</td>
-                                    <td>מרכז ספורט אוניברסיטת ת\"א</td>
-                                    <td>06:00-07:00</td>
-                                    <td>2.1.2017</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
-                                </tr><tr>
-                                    <td><a href=\"#\">3</a></td>
-                                    <td>אבי כהן</td>
-                                    <td>שחיה</td>
-                                    <td>טכניקה</td>
-                                    <td>מרכז ספורט אוניברסיטת ת\"א</td>
-                                    <td>06:00-07:00</td>
-                                    <td>2.1.2017</td>
-                                    <td><a href=\"#\">1</a></td>
-                                    <td><a href=\"#\">2</a></td>
+                               <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
                                 </tr>
                             </table>";
-            echo "admin table";
         } else if($_POST['user'] == "coach"){
-            echo "coach table";
+            echo "<table class = \"trainingTable\">
+                                <tr class=\"tags\"> 
+                                    <td class=\"control\"></td>
+                                    <td>מקצוע<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>סוג<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>מקום<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>שעה<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td>תאריך<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
+                                    <td class=\"control\"></td>
+                                    <td class=\"control\"></td>
+                                </tr>
+                                <tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr><tr id=\"tr122345\">
+                                    <td class=\"control\"></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
+                                </tr>
+                              <tr id=\"tr122345\">
+                                    <td class=\"control\"><span>new</span></td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
+                                </tr>
+                            </table>";
         }else if($_POST['user'] == "client"){
             echo "client table";
         }
