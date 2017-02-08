@@ -14,8 +14,8 @@
                                     <td class=\"control\"></td>
                                     <td class=\"control\"></td>
                                 </tr>
-                                <tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                                <tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>
@@ -25,8 +25,8 @@
                                     <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
                                     <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
                                 </tr>
-                               <tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                              <tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>
@@ -35,8 +35,8 @@
                                     <td class=\"dayTr\">2.1.2017</td>
                                     <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
                                     <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
-                                </tr><tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                                </tr><tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>
@@ -45,8 +45,8 @@
                                     <td class=\"dayTr\">2.1.2017</td>
                                     <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
                                     <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
-                                </tr><tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                                </tr><tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>
@@ -55,8 +55,8 @@
                                     <td class=\"dayTr\">2.1.2017</td>
                                     <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
                                     <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
-                                </tr><tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                                </tr><tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>
@@ -65,8 +65,18 @@
                                     <td class=\"dayTr\">2.1.2017</td>
                                     <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
                                     <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
-                                </tr><tr id=\"tr122345\">
-                                    <td class=\"control\"><span>new</span></td>
+                                </tr><tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
+                                    <td class=\"coachTr\">אבי כהן</td>
+                                    <td class=\"typeTr\">שחיה</td>
+                                    <td class=\"genreTr\">טכניקה</td>
+                                    <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
+                                    <td class=\"timeTr\">06:00-07:00</td>
+                                    <td class=\"dayTr\">2.1.2017</td>
+                                    <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-trash\"></a></td>
+                                    <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-pencil\"></a></td>
+                                </tr><tr id=\"tr122345\" class=\"list\">
+                                    <td class=\"control info\"><span class=\"glyphicon glyphicon-trash\"></span></td>
                                     <td class=\"coachTr\">אבי כהן</td>
                                     <td class=\"typeTr\">שחיה</td>
                                     <td class=\"genreTr\">טכניקה</td>

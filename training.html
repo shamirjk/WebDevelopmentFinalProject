@@ -24,7 +24,7 @@
         <section>
             <a href="index.html" id="logo"></a>
             <ul class="hambBack">
-                <li><a href="#">B</a></li>
+                <li><a id="back" href="#">B</a></li>
                 <li class="lead"><a href="#" id="hamburger"></a></li>
             </ul>
             <ul id="profile">
@@ -72,7 +72,7 @@
         </ol>
         <h1>אימונים</h1>
         <section class="admin notActiveUser">
-            <a href="add_training.html">add</a>
+            <a href="add_training.html" class="addTraining">add</a>
             <section class="trainigTable">admin table</section>
         </section>
         <section class="coach notActiveUser">
@@ -90,6 +90,14 @@
                 return "opened";
             }else return "closed";
         });
+    });
+    $("#back").click(function () {
+        $(".full,.notFull").each(function () {
+            $(this).removeClass("notFull").removeClass("full").addClass("list");
+        });
+        $(".addTraining").css("display","block");
+        $("#hamburger").parent().addClass("lead");
+        $("#back").parent().removeClass("lead").addClass();
     });
 </script>
 </body>
