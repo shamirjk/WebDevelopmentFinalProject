@@ -3,16 +3,15 @@
     padding: 0;
 }
 
-body {
-
-}
 
 h1{
     direction:rtl;
 }
 
 .breadcrumb{
-    background: #ffffff;
+    margin-top: -20px!important;
+    background: #ebebeb;
+    float: right;
 }
 /**log in style*/
 
@@ -22,7 +21,7 @@ h1{
 }
 #wrong{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 20px;
     color: darkred;
 }
 label.glyphicon{
@@ -30,13 +29,14 @@ label.glyphicon{
 }
 .loinBtn{
     width:100%;
-    float: right;
     margin-top:40px;
 }
 .loinBtn>div{
     width:50%;
+
 }
 .loinBtn select{
+    clear: both;
     width:100%;
 }
 .loinBtn>button{
@@ -148,7 +148,7 @@ main {
     height: 700px;
     /*border: 1px solid black;*/
     margin: 0 auto;
-    padding: 10px;
+    padding: 0 20px 10px 20px;
 }
 
 #logo {
@@ -190,9 +190,31 @@ input[type=submit]{
     display: none;
 }
 @media (min-width: 740px) {
+    body {
+        background: #ebebeb;
+    }
+    main>section,main>h1{
+        background: #ffffff;
+        padding-right: 10px ;
+        padding-left: 10px ;
+    }
+    main>h1{
+        margin-top:20px;
+        margin-bottom:0;
+        border-radius: 4px 4px 0 0;
+    }
+    main>section{
+        padding-bottom: 40px;
+        border-radius: 4px;
+    }
+    main form{
+        background: #ffffff;
+        border-radius: 4px;
+        padding: 0px 20px 20px 20px ;
+    }
     #login h1{
         text-align:center;
-        margin-top: 20%
+        margin-top: 20%;
     }
     /***log in***/
 
@@ -260,6 +282,7 @@ input[type=submit]{
         display: block;
     }
     #profileData{
+        z-index: 1;
         background: #ffffff;
         border-radius: 4px;
         border: 1px solid #c6c6c6;
@@ -297,50 +320,40 @@ input[type=submit]{
         height: 70px;
         line-height: 70px;
     }
-    main table{
-        width: 95%;
+
+    /*table of training for admin*/
+    .admin table{
+        width: 90%;
         margin: 0 auto;
-        background: #ffefee;
+        /*background: #ffefee;*/
         padding: 10px;
         border-collapse: collapse;
     }
-    .admin table tr td:nth-child(1){
-        width: 30px;
-        background: #222FFF;
+    .coach table{
+        width: 90%;
+        margin: 0 auto;
+        /*background: #ffefee;*/
+        padding: 10px;
+        border-collapse: collapse;
     }
-    .admin table tr>td:nth-child(2){
-        width: 13%;
+    nav .active{
+        font-weight: bold;
+        color: #000000;
+        background: #ebebeb;
     }
-    .admin table tr>td:nth-child(3){
-        width: 10%;
+    .coachTr,.typeTr,.genreTr,.placeTr,.timeTr,.dayTr{
+        border-bottom:1px dotted #c6c6c6;
     }
-    .admin table tr>td:nth-child(4){
-        width: 10%;
-    }
-    .admin table tr>td:nth-child(5){
-        width: 27%;
-    }
-    .admin table tr>td:nth-child(6){
-        width: 14%;
-    }
-    .admin table tr>td:nth-child(7){
-        width: 12%;
-    }
-    .admin table tr>td:nth-last-child(1) {
-        width: 30px;
-        background: #7a447a;
-    }
-    .admin table tr>td:nth-last-child(2) {
-        width: 30px;
-        background: #7a888a;
+    .control{
+        width: 3%;
+        text-align: center;
     }
     main table *{
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         vertical-align: bottom;
-        line-height: 22px;
+        line-height: 20px;
         color: #777777;
         font-size: 14px;
-        border-bottom:1px dotted #c6c6c6;
         height: 35px;
         text-align: right;
     }
@@ -348,9 +361,37 @@ input[type=submit]{
         border-bottom:none;
         font-weight: bold;
     }
-    .tags>*{
-        margin-top: 5px;
+    .tags *{
+        border-bottom:none!important;
+        height: 14px;
+        line-height: 14px;
     }
+    /*****************************/
+
+    .control *,.control{
+        vertical-align: bottom;
+        border-bottom:none;
+        height: 22px;
+        line-height: 20px;
+        font-size: 20px;
+
+    }
+    .control *{
+        color: #c6c6c6;
+        transition: 1s;
+    }
+    .control *:hover{
+        color: #000000;
+    }
+    .control>span{
+        background: #c6c6c6;
+        color: #ffffff;
+        border-radius: 2px;
+        font-size: 15px;
+        padding: 0 2px 0 2px;
+    }
+
+    /**************************************8/
     /*training table*/
 
     /*end training table*/
@@ -438,7 +479,7 @@ input[type=submit]{
 }
 
 @media (max-width: 739px) {
-    .closed+main>h1{
+    .closed+main h1{
         font-size: 25px;
         width:200px;
         text-align: center;
@@ -460,7 +501,7 @@ input[type=submit]{
     #login>form{
         margin-top: 40%;
     }
-    #login>form>div:nth-child(4){
+    #login>form>div:nth-child(5){
         margin-top: 40px ;
     }
 
