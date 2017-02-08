@@ -145,7 +145,6 @@ header >section>ul:nth-child(3)>ul:nth-child(3){
 
 main {
     max-width: 1000px;
-    height: 700px;
     /*border: 1px solid black;*/
     margin: 0 auto;
     padding: 0 20px 10px 20px;
@@ -320,27 +319,20 @@ input[type=submit]{
         height: 70px;
         line-height: 70px;
     }
-
-    /*table of training for admin*/
-    .admin table{
-        width: 90%;
-        margin: 0 auto;
-        /*background: #ffefee;*/
-        padding: 10px;
-        border-collapse: collapse;
-    }
-    .coach table{
-        width: 90%;
-        margin: 0 auto;
-        /*background: #ffefee;*/
-        padding: 10px;
-        border-collapse: collapse;
-    }
     nav .active{
         font-weight: bold;
         color: #000000;
         background: #ebebeb;
     }
+    /*table of training for admin*/
+    .trainingTable{
+        width: 90%;
+        margin: 0 auto;
+        /*background: #ffefee;*/
+        padding: 10px;
+        border-collapse: collapse;
+    }
+
     .coachTr,.typeTr,.genreTr,.placeTr,.timeTr,.dayTr{
         border-bottom:1px dotted #c6c6c6;
     }
@@ -366,7 +358,7 @@ input[type=submit]{
         height: 14px;
         line-height: 14px;
     }
-    /*****************************/
+
 
     .control *,.control{
         vertical-align: bottom;
@@ -383,13 +375,13 @@ input[type=submit]{
     .control *:hover{
         color: #000000;
     }
-    .control>span{
-        background: #c6c6c6;
-        color: #ffffff;
-        border-radius: 2px;
-        font-size: 15px;
-        padding: 0 2px 0 2px;
-    }
+    /*.control>span{*/
+        /*background: #c6c6c6;*/
+        /*color: #ffffff;*/
+        /*border-radius: 2px;*/
+        /*font-size: 15px;*/
+        /*padding: 0 2px 0 2px;*/
+    /*}*/
 
     /**************************************8/
     /*training table*/
@@ -491,9 +483,9 @@ input[type=submit]{
         position: fixed;
         z-index:10;
     }
-
     main{
-        margin-top: 70px;
+        margin-top: 70px ;
+        padding: 0;
     }
     #login h4:not(#wrong){
         display: none;
@@ -504,8 +496,6 @@ input[type=submit]{
     #login>form>div:nth-child(5){
         margin-top: 40px ;
     }
-
-
     .overlay {
         top: 0;
         right: 0;
@@ -673,4 +663,186 @@ input[type=submit]{
     }
 
     /**************************************************end header*/
+
+    /*table of training for admin*/
+    .trainingTable{
+        width: 100%;
+        margin: 0 auto;
+        /*background: #ffefee;*/
+        padding: 10px;
+        border-collapse: collapse;
+    }
+    .trainingTable tr:not(.tags){
+        border-bottom:1px dotted #c6c6c6;
+        position: relative;
+        display: block;
+    }
+    .trainingTable td{
+        position: absolute;
+    }
+
+    /*.coachTr,.typeTr,.genreTr,.placeTr,.timeTr,.dayTr{*/
+        /*border-bottom:1px dotted #c6c6c6;*/
+    /*}*/
+    .list .deleteTr,.list .editTr,.list .coachTr,.list .typeTr,.list .genreTr{
+        display: none
+    }
+    .list .info{
+        top:35px;
+        left:45px;
+    }
+    .list .info span{
+        font-size: 27px;
+    }
+    .list .placeTr{
+        font-size: 27px;
+        color: #555555;
+        top:10px;
+        right: 10px;
+    }
+    .list .dayTr,.list .timeTr{
+        color: #7a7a7a;
+    }
+    .list .dayTr{
+        font-size: 20px;
+        top:40px;
+        right: 10px;
+    }
+    .list .timeTr{
+        font-size: 20px;
+        top:40px;
+        right: 130px;
+    }
+    .addTraining{
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+    }
+    .list{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        vertical-align: bottom;
+        line-height: 20px;
+        color: #777777;
+        font-size: 14px;
+        height: 70px;
+        text-align: right;
+    }
+    .tags{
+        display: none;
+    }
+    .full{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        direction: rtl;
+        top:0;
+    }
+    .notFull{
+        display: none!important;
+    }
+
+    /*****************************************/
+    /*.control *,.control{*/
+        /*vertical-align: bottom;*/
+        /*border-bottom:none;*/
+        /*height: 22px;*/
+        /*line-height: 20px;*/
+        /*font-size: 20px;*/
+
+    /*}*/
+    /*.control *{*/
+        /*color: #c6c6c6;*/
+        /*transition: 1s;*/
+    /*}*/
+    /*.control *:hover{*/
+        /*color: #000000;*/
+    /*}*/
+    /*.control>span{*/
+        /*background: #c6c6c6;*/
+        /*color: #ffffff;*/
+        /*border-radius: 2px;*/
+        /*font-size: 15px;*/
+        /*padding: 0 2px 0 2px;*/
+    /*}*/
+
+    .full .typeTr{
+        font-size: 27px;
+        color: #555555;
+        top:10px;
+        width: 100%;
+    }
+    .full .genreTr{
+        font-size: 27px;
+        color: #555555;
+        top:50px;
+        border-bottom:1px dotted #c6c6c6;
+        width: 100%;
+    }
+    .full .dayTr{
+        color: #555555;
+        font-size: 20px;
+        width: 100%;
+        top: 100px;
+    }
+    .full .timeTr{
+        color: #555555;
+        font-size: 20px;
+        top:140px;
+        width: 100%;
+    }
+    .full .placeTr{
+        font-size: 27px;
+        color: #555555;
+        top:200px;
+        width: 100%;
+    }
+    .full .info{
+        top:35px;
+        left:45px;
+    }
+    .full .info span{
+        font-size: 27px;
+    }
+    .full .coachTr{
+        font-size: 20px;
+        color: #555555;
+        top:250px;
+        width: 100%;
+    }
+    .full .deleteTr{
+        top: 400px;
+        right: 110px;
+    }
+    .full .deleteTr a{
+        font-size: 36px;
+        color: #7a7a7a;
+    }
+    .full .editTr{
+        top:400px;
+        right:30px;
+    }
+    .full .editTr a{
+        font-size: 36px;
+        color: #7a7a7a;
+    }
+
+    /*.full .placeTr{
+        font-size: 27px;
+        color: #555555;
+        top:90px;
+        right: 10px;
+    }
+    .full .dayTr,.full .timeTr{
+        color: #7a7a7a;
+    }
+    .full .dayTr{
+        font-size: 20px;
+        top:40px;
+        right: 10px;
+    }
+    .full .timeTr{
+        font-size: 20px;
+        top:40px;
+        right: 130px;
+    }*/
 }
