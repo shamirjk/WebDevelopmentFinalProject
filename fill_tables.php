@@ -12,9 +12,97 @@
         (\"589723060\",\"client\",\"משה גרוס\",\"moshe.moshe@gmail.com\")
         "))
     {
+        echo "<p>Table tbl_user_207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table user: \n" .mysqli_error($conn)."</p>";
+    }
+
+    //fill Complex table
+    if (mysqli_query($conn,
+        "INSERT INTO tbl_complex_207 (id, name, city, street) VALUES
+                    (\"1\",\"מרכז ספורט אוניברסיטת תא\",\"תל אביב\",\"חיים לבנון 60\"),
+                    (\"2\",\"מועדון זאוס\",\"רמת גן\",\"זאב זבוטינסקי 7\"),
+                    (\"3\",\"רנסנס הגוש הגדול\",\"תל אביב\",\"יחזקאל שטרייכמן 9\"),
+                    (\"4\",\"קאנטרי נוה אביבים\",\"תל אביב\",\"יהודה הנשיא 34\")
+            "))
+    {
+        echo "<p>Table tbl_complex_207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table complex: \n" .mysqli_error($conn)."</p>";
+    }
+
+    //fill Complex sport type table
+if (mysqli_query($conn,
+        "INSERT INTO tbl_complex_sport_type_207 (id, type) VALUES
+                (\"1\",\"שחיה\"),
+                (\"2\",\"שחיה\"),
+                (\"3\",\"שחיה\"),
+                (\"4\",\"שחיה\")
+                "))
+    {
+        echo "<p>Table tbl_complex_sport_type_207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table complex_sport_type: \n" .mysqli_error($conn)."</p>";
+    }
+
+    //fill Coach table
+if (mysqli_query($conn,
+    "INSERT INTO tbl_coach_207 (id, name, email, city, street) VALUES
+(\"890337461\",\"אבי כהן\",\"avi.cohen@gmail.com\",\"רמת גן\",\"אלימלך 13\"),
+        (\"765489777\",\"משה אשכנזי\",\"moshe.ash@gmail.com\",\"גבעתיים\",\"רמבם 10\"),
+        (\"654321789\",\"יובל מנדלוביץ\",\"yoval.mendel@gmail.com\",\"תל אביב\",\"בן יהודה 60\")
+         "))
+    {
+        echo "<p>Table tbl_coach_207 filled successfully</p>";
+    } else {
+    echo "<p>Error filling table coach: \n" .mysqli_error($conn)."</p>";
+    }
+
+if (mysqli_query($conn,
+    "INSERT INTO tbl_coach_sport_type_207 (id, type) VALUES
+(\"890337461\",\"שחיה\"),
+        (\"765489777\",\"שחיה\"),
+        (\"654321789\",\"שחיה\")
+         "))
+    {
+        echo "<p>Table tbl_coach_sport_type__207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table coach_sport_type: \n" .mysqli_error($conn)."</p>";
+    }
+
+    //fill Client table
+if (mysqli_query($conn,
+    "INSERT INTO tbl_client_207 (id, name, phone, city, street, email) VALUES
+(\"657448391\",\"שי לוי\",\"050-2224455\",\"תל אביב\",\"ארנון 5\",\"shai.shai@gmail.com\"),
+        (\"589723060\",\"משה גרוס\",\"052-9798855\",\"רמת גן\",\"החשמונאים 23\",\"moshe.moshe@gmail.com\")
+         "))
+    {
         echo "<p>Table tbl_client_207 filled successfully</p>";
     } else {
-        echo "<p>Error filling table: \n" .mysqli_error($conn)."</p>";
+        echo "<p>Error filling table Client: \n" .mysqli_error($conn)."</p>";
     }
+
+//fill Training table
+if (mysqli_query($conn,
+    "INSERT INTO tbl_training_207 (id, type, genre, complex_id, coach_id, status) VALUES
+            (\"0\",\"שחיה\",\"טכניקה\",\"1\",\"890337461\",\"1\"),
+                        (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
+            (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
+            (\"0\",\"שחיה\",\"כושר\",\"2\",\"654321789\",\"1\"),
+            (\"0\",\"שחיה\",\"כושר\",\"3\",\"765489777\",\"1\"),
+            (\"0\",\"שחיה\",\"כושר\",\"3\",\"765489777\",\"1\")
+ /*           
+                        (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
+            (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
+            (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
+            (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
+*/
+            "))
+    {
+        echo "<p>Table tbl_training_207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table training: \n" .mysqli_error($conn)."</p>";
+    }
+
     mysqli_close($conn);
 ?>
