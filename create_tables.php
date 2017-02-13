@@ -3,7 +3,7 @@
     include("my_db.php");
 
     if (mysqli_query($conn,
-        "CREATE TABLE tbl_area_207(
+        "CREATE TABLE IF NOT EXISTS tbl_area_207(
             area_code INT(2) UNSIGNED NOT NULL,
             area_name VARCHAR(30) NOT NULL,
             PRIMARY KEY(area_code)
@@ -17,7 +17,7 @@
 
     //complex tabele
     if (mysqli_query($conn,
-        "CREATE TABLE tbl_complex_207(
+        "CREATE TABLE IF NOT EXISTS tbl_complex_207(
         complex_id INT(4) UNSIGNED NOT NULL,
         complex_area INT(2) UNSIGNED NOT NULL,
         complex_name VARCHAR(30) NOT NULL,
@@ -34,7 +34,7 @@
 
     //type
    if (mysqli_query($conn,
-       "CREATE TABLE tbl_complex_sport_type_207(
+       "CREATE TABLE IF NOT EXISTS tbl_complex_sport_type_207(
         complex_id INT(4) UNSIGNED NOT NULL,
         type VARCHAR(30) NOT NULL,
         PRIMARY KEY(complex_id, type),
@@ -47,7 +47,7 @@
    }
 
    if (mysqli_query($conn,
-          "CREATE TABLE tbl_coach_207(
+          "CREATE TABLE IF NOT EXISTS tbl_coach_207(
            coach_id VARCHAR(30) NOT NULL,
            coach_name VARCHAR(30) NOT NULL,
            coach_email VARCHAR(30) NOT NULL,
@@ -61,7 +61,7 @@
           echo "<p>Error creating table: " .mysqli_error($conn)."</p>";
       }
    if (mysqli_query($conn,
-             "CREATE TABLE tbl_coach_sport_type_207(
+             "CREATE TABLE IF NOT EXISTS tbl_coach_sport_type_207(
               coach_id VARCHAR(30) NOT NULL,
               type VARCHAR(30) NOT NULL,
               PRIMARY KEY(coach_id, type),
@@ -74,7 +74,7 @@
    }
 
    if (mysqli_query($conn,
-        "CREATE TABLE tbl_training_207(
+        "CREATE TABLE IF NOT EXISTS tbl_training_207(
         training_id INT(6) UNSIGNED NOT NULL,
         training_type VARCHAR(30) NOT NULL,
         training_genre VARCHAR(30) NOT NULL,
@@ -91,7 +91,7 @@
         echo "<p>Error creating table: " .mysqli_error($conn)."</p>";
    }
    if (mysqli_query($conn,
-           "CREATE TABLE tbl_client_207(
+           "CREATE TABLE IF NOT EXISTS tbl_client_207(
            client_id VARCHAR(30) NOT NULL,
            client_name VARCHAR(30) NOT NULL,
            client_phone VARCHAR(30) NOT NULL,
@@ -106,7 +106,7 @@
         echo "<p>Error creating table: \n" .mysqli_error($conn)."</p>";
    }
    if (mysqli_query($conn,
-               "CREATE TABLE tbl_user_207(
+               "CREATE TABLE IF NOT EXISTS tbl_user_207(
                user_id VARCHAR(30) NOT NULL,
                user_type VARCHAR(30) NOT NULL,
                user_name VARCHAR(30) NOT NULL,
