@@ -67,8 +67,7 @@
         coach_id VARCHAR(30) NOT NULL,
         status INT(1) NOT NULL,
         FOREIGN KEY(complex_id) REFERENCES tbl_complex_207(id) ON DELETE CASCADE ON UPDATE CASCADE,
-        FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(id) ON DELETE CASCADE ON UPDATE CASCADE,
-        PRIMARY KEY(id, complex_id, coach_id)
+        FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(id) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
    {
         echo "<p>Table tbl_training_207 created successfully</p>";
