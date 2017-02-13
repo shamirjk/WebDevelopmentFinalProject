@@ -22,7 +22,7 @@
         complex_area INT(2) UNSIGNED NOT NULL,
         complex_name VARCHAR(60) NOT NULL,
         complex_city VARCHAR(30) NOT NULL,
-        complex_street VARCHAR(30) NOT NULL,
+        complex_street VARCHAR(40) NOT NULL,
         PRIMARY KEY(complex_id),
         FOREIGN KEY (complex_area) REFERENCES tbl_area_207(area_code) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
