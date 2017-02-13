@@ -1,7 +1,6 @@
 var currentUser = (function() {
     var data = window.location.search.substring(1);
     var namesAndValues = data.split("&");
-
     $.ajax({
         type: 'POST',
         url: 'user_verification.php',
@@ -17,7 +16,6 @@ var currentUser = (function() {
     for ( var varPlusVal in namesAndValues) {
         parameters[namesAndValues[varPlusVal].split("=")[0]] = namesAndValues[varPlusVal].split("=")[1];
     }
-
     return parameters;
 })();
 
@@ -44,6 +42,7 @@ var loadProfile = function(){
         cache: true,
         success: function (html) {
             $('#profileData').html(html);
+
         }
     });
 
@@ -62,3 +61,4 @@ var loadProfile = function(){
         });
     });
 };
+
