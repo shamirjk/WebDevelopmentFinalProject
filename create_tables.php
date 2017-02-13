@@ -20,7 +20,7 @@
         "CREATE TABLE IF NOT EXISTS tbl_complex_207(
         complex_id INT(4) UNSIGNED NOT NULL,
         complex_area INT(2) UNSIGNED NOT NULL,
-        complex_name VARCHAR(30) NOT NULL,
+        complex_name VARCHAR(60) NOT NULL,
         complex_city VARCHAR(30) NOT NULL,
         complex_street VARCHAR(30) NOT NULL,
         PRIMARY KEY(complex_id),
