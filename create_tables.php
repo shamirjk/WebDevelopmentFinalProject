@@ -2,14 +2,29 @@
     //include("db.php");
     include("my_db.php");
 
-    //comlex tabele
+    if (mysqli_query($conn,
+        "CREATE TABLE tbl_area_207(
+            area_code INT(2) UNSIGNED NOT NULL,
+            area_name VARCHAR(30) NOT NULL,
+            PRIMARY KEY(area_code)
+            )"))
+    {
+        echo "<p>Table tbl_area_207 created successfully</p>";
+    } else {
+        echo "\nError creating table: " .mysqli_error($conn)."</p>";
+    }
+
+
+    //complex tabele
     if (mysqli_query($conn,
         "CREATE TABLE tbl_complex_207(
-        id INT(6) UNSIGNED AUTO_INCREMENT,
-        name VARCHAR(30) NOT NULL,
-        city VARCHAR(30) NOT NULL,
-        street VARCHAR(30) NOT NULL,
-        PRIMARY KEY(id)
+        complex_id INT(4) UNSIGNED AUTO_INCREMENT,
+        complex_area INT(2) UNSIGNED NOT NULL,
+        complex_name VARCHAR(30) NOT NULL,
+        complex_city VARCHAR(30) NOT NULL,
+        complex_street VARCHAR(30) NOT NULL,
+        FOREIGN KEY (complex_area) REFERENCES tbl_area_207(area_code) ON DELETE CASCADE ON UPDATE CASCADE,
+        PRIMARY KEY(complex_id)
         )"))
     {
         echo "<p>Table tbl_complex_207 created successfully</p>";
@@ -20,10 +35,10 @@
     //type
    if (mysqli_query($conn,
        "CREATE TABLE tbl_complex_sport_type_207(
-        id INT(6) UNSIGNED NOT NULL,
+        complex_id INT(4) UNSIGNED NOT NULL,
         type VARCHAR(30) NOT NULL,
-        FOREIGN KEY (id) REFERENCES tbl_complex_207(id) ON DELETE CASCADE ON UPDATE CASCADE,
-        PRIMARY KEY(id, type)
+        FOREIGN KEY (complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
+        PRIMARY KEY(complex_id, type)
         )"))
    {
        echo "<p>Table tbl_complex_sport_type_207 created successfully</p>";
@@ -33,12 +48,12 @@
 
    if (mysqli_query($conn,
           "CREATE TABLE tbl_coach_207(
-           id VARCHAR(30) NOT NULL,
-           name VARCHAR(30) NOT NULL,
-           email VARCHAR(30) NOT NULL,
-           city VARCHAR(30) NOT NULL,
-           street VARCHAR(30) NOT NULL,
-           PRIMARY KEY(id)
+           coach_id VARCHAR(30) NOT NULL,
+           coach_name VARCHAR(30) NOT NULL,
+           coach_email VARCHAR(30) NOT NULL,
+           coach_city VARCHAR(30) NOT NULL,
+           coach_street VARCHAR(30) NOT NULL,
+           PRIMARY KEY(coach_id)
            )"))
       {
           echo "<p>Table tbl_coach_207 created successfully</p>";
@@ -47,10 +62,10 @@
       }
    if (mysqli_query($conn,
              "CREATE TABLE tbl_coach_sport_type_207(
-              id VARCHAR(30) NOT NULL,
+              coach_id VARCHAR(30) NOT NULL,
               type VARCHAR(30) NOT NULL,
-              FOREIGN KEY(id) REFERENCES tbl_coach_207(id) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY(id, type)
+              FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE,
+              PRIMARY KEY(coach_id, type)
               )"))
    {
              echo "<p>Table tbl_coach_sport_type_207 created successfully</p>";
@@ -60,14 +75,14 @@
 
    if (mysqli_query($conn,
         "CREATE TABLE tbl_training_207(
-        id INT(6) UNSIGNED NOT NULL,
-        type VARCHAR(30) NOT NULL,
-        genre VARCHAR(30) NOT NULL,
-        complex_id INT(6) UNSIGNED NOT NULL,
-        coach_id VARCHAR(30) NOT NULL,
-        status INT(1) NOT NULL,
-        FOREIGN KEY(complex_id) REFERENCES tbl_complex_207(id) ON DELETE CASCADE ON UPDATE CASCADE,
-        FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(id) ON DELETE CASCADE ON UPDATE CASCADE
+        training_id INT(6) UNSIGNED NOT NULL,
+        training_type VARCHAR(30) NOT NULL,
+        training_genre VARCHAR(30) NOT NULL,
+        training_complex_id INT(4) UNSIGNED NOT NULL,
+        training_coach_id VARCHAR(30) NOT NULL,
+        training_status INT(1) NOT NULL,
+        FOREIGN KEY(training_complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
+        FOREIGN KEY(training_coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
    {
         echo "<p>Table tbl_training_207 created successfully</p>";
@@ -76,13 +91,13 @@
    }
    if (mysqli_query($conn,
            "CREATE TABLE tbl_client_207(
-           id VARCHAR(30) NOT NULL,
-           name VARCHAR(30) NOT NULL,
-           phone VARCHAR(30) NOT NULL,
-           city VARCHAR(30) NOT NULL,
-           street VARCHAR(30) NOT NULL,
-           email VARCHAR(30) NOT NULL,
-           PRIMARY KEY(id)
+           client_id VARCHAR(30) NOT NULL,
+           client_name VARCHAR(30) NOT NULL,
+           client_phone VARCHAR(30) NOT NULL,
+           client_city VARCHAR(30) NOT NULL,
+           client_street VARCHAR(30) NOT NULL,
+           client_email VARCHAR(30) NOT NULL,
+           PRIMARY KEY(client_id)
            )"))
    {
         echo "<p>Table tbl_client_207 created successfully</p>";
@@ -91,11 +106,11 @@
    }
    if (mysqli_query($conn,
                "CREATE TABLE tbl_user_207(
-               id VARCHAR(30) NOT NULL,
-               user VARCHAR(30) NOT NULL,
-               name VARCHAR(30) NOT NULL,
-               email VARCHAR(30) NOT NULL,
-               PRIMARY KEY(id, user)
+               user_id VARCHAR(30) NOT NULL,
+               user_type VARCHAR(30) NOT NULL,
+               user_name VARCHAR(30) NOT NULL,
+               user_email VARCHAR(30) NOT NULL,
+               PRIMARY KEY(user_id, user_type)
                )"))
    {
         echo "<p>Table tbl_client_207 created successfully</p>";
