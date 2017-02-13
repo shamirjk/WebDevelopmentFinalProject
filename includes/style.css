@@ -359,7 +359,6 @@ input[type=submit]{
         line-height: 14px;
     }
 
-
     .control *,.control{
         vertical-align: bottom;
         border-bottom:none;
@@ -368,6 +367,12 @@ input[type=submit]{
         font-size: 20px;
 
     }
+
+    .control i{
+        font-size: 30px;
+        color: #3f3f3f;
+    }
+
     .control *{
         color: #c6c6c6;
         transition: 1s;
@@ -376,7 +381,9 @@ input[type=submit]{
         color: #000000;
     }
 
-
+    tr[id^=tr]{
+        cursor: pointer;
+    }
 
     .addClosed{
         display: none;
