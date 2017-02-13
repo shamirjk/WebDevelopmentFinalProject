@@ -18,13 +18,13 @@
     //complex tabele
     if (mysqli_query($conn,
         "CREATE TABLE tbl_complex_207(
-        complex_id INT(4) UNSIGNED AUTO_INCREMENT,
+        complex_id INT(4) UNSIGNED NOT NULL,
         complex_area INT(2) UNSIGNED NOT NULL,
         complex_name VARCHAR(30) NOT NULL,
         complex_city VARCHAR(30) NOT NULL,
         complex_street VARCHAR(30) NOT NULL,
-        FOREIGN KEY (complex_area) REFERENCES tbl_area_207(area_code) ON DELETE CASCADE ON UPDATE CASCADE,
-        PRIMARY KEY(complex_id)
+        PRIMARY KEY(complex_id),
+        FOREIGN KEY (complex_area) REFERENCES tbl_area_207(area_code) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
     {
         echo "<p>Table tbl_complex_207 created successfully</p>";
@@ -37,8 +37,8 @@
        "CREATE TABLE tbl_complex_sport_type_207(
         complex_id INT(4) UNSIGNED NOT NULL,
         type VARCHAR(30) NOT NULL,
-        FOREIGN KEY (complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
-        PRIMARY KEY(complex_id, type)
+        PRIMARY KEY(complex_id, type),
+        FOREIGN KEY (complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
    {
        echo "<p>Table tbl_complex_sport_type_207 created successfully</p>";
@@ -64,8 +64,8 @@
              "CREATE TABLE tbl_coach_sport_type_207(
               coach_id VARCHAR(30) NOT NULL,
               type VARCHAR(30) NOT NULL,
-              FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE,
-              PRIMARY KEY(coach_id, type)
+              PRIMARY KEY(coach_id, type),
+              FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
               )"))
    {
              echo "<p>Table tbl_coach_sport_type_207 created successfully</p>";
@@ -78,11 +78,12 @@
         training_id INT(6) UNSIGNED NOT NULL,
         training_type VARCHAR(30) NOT NULL,
         training_genre VARCHAR(30) NOT NULL,
-        training_complex_id INT(4) UNSIGNED NOT NULL,
-        training_coach_id VARCHAR(30) NOT NULL,
+        complex_id INT(4) UNSIGNED NOT NULL,
+        coach_id VARCHAR(30) NOT NULL,
         training_status INT(1) NOT NULL,
-        FOREIGN KEY(training_complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
-        FOREIGN KEY(training_coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
+        PRIMARY KEY(training_id),
+        FOREIGN KEY(complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
+        FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
         )"))
    {
         echo "<p>Table tbl_training_207 created successfully</p>";
