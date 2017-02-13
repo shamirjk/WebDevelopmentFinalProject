@@ -19,7 +19,7 @@
 
 //fill users table
     if (mysqli_query($conn,
-        "INSERT INTO tbl_user_207 (uder_id, user_type, user_name, user_email) VALUES
+        "INSERT INTO tbl_user_207 (user_id, user_type, user_name, user_email) VALUES
         (\"283774651\",\"admin\",\"בר קריצלר\",\"bar.bar@gmail.com\"),
         (\"890337461\",\"coach\",\"אבי כהן\",\"avi.cohen@gmail.com\"),
         (\"765489777\",\"coach\",\"משה אשכנזי\",\"moshe.ash@gmail.com\"),
@@ -102,13 +102,13 @@ if (mysqli_query($conn,
 
 //fill Training table
 if (mysqli_query($conn,
-    "INSERT INTO tbl_training_207 (training_id, training_type, training_genre, training_complex_id, training_coach_id, training_status) VALUES
-            (\"0\",\"שחיה\",\"טכניקה\",\"1\",\"890337461\",\"1\"),
-                        (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
-            (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
-            (\"0\",\"שחיה\",\"כושר\",\"2\",\"654321789\",\"1\"),
-            (\"0\",\"שחיה\",\"כושר\",\"3\",\"765489777\",\"1\"),
-            (\"0\",\"שחיה\",\"כושר\",\"3\",\"765489777\",\"1\")
+    "INSERT INTO tbl_training_207 (training_id, training_type, training_genre, complex_id, coach_id, training_status) VALUES
+            (\"0001\",\"שחיה\",\"טכניקה\",\"100\",\"890337461\",\"1\"),
+                        (\"0002\",\"שחיה\",\"כושר\",\"100\",\"890337461\",\"1\"),
+            (\"0003\",\"שחיה\",\"כושר\",\"100\",\"890337461\",\"1\"),
+            (\"0004\",\"שחיה\",\"כושר\",\"200\",\"654321789\",\"1\"),
+            (\"0005\",\"שחיה\",\"כושר\",\"300\",\"765489777\",\"1\"),
+            (\"0006\",\"שחיה\",\"כושר\",\"300\",\"765489777\",\"1\")
  /*           
                         (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
             (\"0\",\"שחיה\",\"טכניקה\",\"complex id\",\"coach_id\",\"1\"),
