@@ -1,9 +1,25 @@
 <?php
     include("create_tables.php");
 
-    //fill users table
     if (mysqli_query($conn,
-        "INSERT INTO tbl_user_207 (id, user, name, email) VALUES
+        "INSERT INTO tbl_area_207 (area_code, area_name) VALUES
+                    (\"1\",\"צפון\"),               
+                                       (\"2\",\"חיפה\"),
+                    (\"3\",\"השרון\"),
+                    (\"4\",\"גוש דן\"),
+ (\"5\",\"שפלה\"),
+                    (\"6\",\"ירושלים\"),
+                    (\"7\",\"דרום\")
+                    "))
+    {
+        echo "<p>Table tbl_area_207 filled successfully</p>";
+    } else {
+        echo "<p>Error filling table complex_sport_type: \n" .mysqli_error($conn)."</p>";
+    }
+
+//fill users table
+    if (mysqli_query($conn,
+        "INSERT INTO tbl_user_207 (uder_id, user_type, user_name, user_email) VALUES
         (\"283774651\",\"admin\",\"בר קריצלר\",\"bar.bar@gmail.com\"),
         (\"890337461\",\"coach\",\"אבי כהן\",\"avi.cohen@gmail.com\"),
         (\"765489777\",\"coach\",\"משה אשכנזי\",\"moshe.ash@gmail.com\"),
@@ -19,11 +35,12 @@
 
     //fill Complex table
     if (mysqli_query($conn,
-        "INSERT INTO tbl_complex_207 (id, name, city, street) VALUES
-                    (\"1\",\"מרכז ספורט אוניברסיטת תא\",\"תל אביב\",\"חיים לבנון 60\"),
-                    (\"2\",\"מועדון זאוס\",\"רמת גן\",\"זאב זבוטינסקי 7\"),
-                    (\"3\",\"רנסנס הגוש הגדול\",\"תל אביב\",\"יחזקאל שטרייכמן 9\"),
-                    (\"4\",\"קאנטרי נוה אביבים\",\"תל אביב\",\"יהודה הנשיא 34\")
+        "INSERT INTO tbl_complex_207 (complex_id, complex_area, complex_name, complex_city, complex_street) VALUES
+                    (\"100\",\"4\",\"מרכז ספורט אוניברסיטת תא\",\"תל אביב\",\"חיים לבנון 60\"),
+                    (\"200\",\"4\",\"מועדון זאוס\",\"רמת גן\",\"זאב זבוטינסקי 7\"),
+                    (\"300\",\"4\",\"רנסנס הגוש הגדול\",\"תל אביב\",\"יחזקאל שטרייכמן 9\"),
+                                        (\"400\",\"2\",\"ספורטן חיפה\",\"חיפה\",\"התשבי 9\"),
+                    (\"500\",\"4\",\"קאנטרי נוה אביבים\",\"תל אביב\",\"יהודה הנשיא 34\")
             "))
     {
         echo "<p>Table tbl_complex_207 filled successfully</p>";
@@ -33,11 +50,12 @@
 
     //fill Complex sport type table
 if (mysqli_query($conn,
-        "INSERT INTO tbl_complex_sport_type_207 (id, type) VALUES
-                (\"1\",\"שחיה\"),
-                (\"2\",\"שחיה\"),
-                (\"3\",\"שחיה\"),
-                (\"4\",\"שחיה\")
+        "INSERT INTO tbl_complex_sport_type_207 (complex_id, type) VALUES
+                (\"100\",\"שחיה\"),
+                (\"200\",\"שחיה\"),
+                (\"300\",\"שחיה\"),
+                                (\"400\",\"שחיה\"),
+                (\"500\",\"שחיה\")
                 "))
     {
         echo "<p>Table tbl_complex_sport_type_207 filled successfully</p>";
@@ -47,7 +65,7 @@ if (mysqli_query($conn,
 
     //fill Coach table
 if (mysqli_query($conn,
-    "INSERT INTO tbl_coach_207 (id, name, email, city, street) VALUES
+    "INSERT INTO tbl_coach_207 (coach_id, coach_name, coach_email, coach_city, coach_street) VALUES
 (\"890337461\",\"אבי כהן\",\"avi.cohen@gmail.com\",\"רמת גן\",\"אלימלך 13\"),
         (\"765489777\",\"משה אשכנזי\",\"moshe.ash@gmail.com\",\"גבעתיים\",\"רמבם 10\"),
         (\"654321789\",\"יובל מנדלוביץ\",\"yoval.mendel@gmail.com\",\"תל אביב\",\"בן יהודה 60\")
@@ -59,7 +77,7 @@ if (mysqli_query($conn,
     }
 
 if (mysqli_query($conn,
-    "INSERT INTO tbl_coach_sport_type_207 (id, type) VALUES
+    "INSERT INTO tbl_coach_sport_type_207 (coach_id, type) VALUES
 (\"890337461\",\"שחיה\"),
         (\"765489777\",\"שחיה\"),
         (\"654321789\",\"שחיה\")
@@ -72,7 +90,7 @@ if (mysqli_query($conn,
 
     //fill Client table
 if (mysqli_query($conn,
-    "INSERT INTO tbl_client_207 (id, name, phone, city, street, email) VALUES
+    "INSERT INTO tbl_client_207 (client_id, client_name, client_phone, client_city, client_street, client_email) VALUES
 (\"657448391\",\"שי לוי\",\"050-2224455\",\"תל אביב\",\"ארנון 5\",\"shai.shai@gmail.com\"),
         (\"589723060\",\"משה גרוס\",\"052-9798855\",\"רמת גן\",\"החשמונאים 23\",\"moshe.moshe@gmail.com\")
          "))
@@ -84,7 +102,7 @@ if (mysqli_query($conn,
 
 //fill Training table
 if (mysqli_query($conn,
-    "INSERT INTO tbl_training_207 (id, type, genre, complex_id, coach_id, status) VALUES
+    "INSERT INTO tbl_training_207 (training_id, training_type, training_genre, training_complex_id, training_coach_id, training_status) VALUES
             (\"0\",\"שחיה\",\"טכניקה\",\"1\",\"890337461\",\"1\"),
                         (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
             (\"0\",\"שחיה\",\"כושר\",\"1\",\"890337461\",\"1\"),
