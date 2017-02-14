@@ -394,8 +394,8 @@ input[type=submit]{
 
     .addOpened *[class^=addi]{
         animation-name:widthAddi;
-        animation-duration: 500ms;
-        height: 200px;
+        animation-duration: 100ms;
+        height: 300px;
     }
     @keyframes widthAddi{
         from{ height: 0;}
@@ -408,7 +408,7 @@ input[type=submit]{
     }
     @keyframes visibAddi{
         0%{ opacity: 0;}
-        25%{ opacity: 0;}
+        80%{ opacity: 0;}
         100%{ opacity: 1;}
     }
     .additional .addiCoach{
@@ -436,7 +436,7 @@ input[type=submit]{
         padding-left: 20px;
     }
     .mapGoogle{
-        height:100px;
+        height:200px;
         background: #000000;
         border-radius: 4px;
     }
