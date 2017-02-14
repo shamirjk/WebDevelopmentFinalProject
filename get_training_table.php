@@ -13,6 +13,7 @@
                 FROM tbl_training_207 INNER JOIN tbl_complex_207 ON tbl_training_207.complex_id = tbl_complex_207.complex_id
                   INNER JOIN tbl_area_207 ON tbl_complex_207.complex_area=tbl_area_207.area_code
                   INNER JOIN tbl_coach_207 ON tbl_training_207.coach_id=tbl_coach_207.coach_id
+                  WHERE date_start>= CURDATE()
                 ORDER BY tbl_training_207.date_start, tbl_training_207.hour_start;";
 
             $response = @mysqli_query($conn, $query);
@@ -205,16 +206,6 @@
                          <td class=\"dayTr\">2.1.2017</td>
                          <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
                          <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-ok\"></a></td>
-                     </tr>
-                   <tr id=\"tr122345\">
-                         <td class=\"control\"><span>new</span></td>
-                         <td class=\"typeTr\">שחיה</td>
-                         <td class=\"genreTr\">טכניקה</td>
-                         <td class=\"placeTr\" >מרכז ספורט אוניברסיטת ת\"א</tdclas>
-                         <td class=\"timeTr\">06:00-07:00</td>
-                         <td class=\"dayTr\">2.1.2017</td>
-                         <td class=\"control deleteTr\"><a href=\"#\" class=\"glyphicon glyphicon-remove\"></a></td>
-                         <td class=\"control editTr\"><a href=\"#\" class=\"glyphicon glyphicon-map-marker\"></a></td>
                      </tr>
                  </table>";*/
                 }

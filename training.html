@@ -1,113 +1,106 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
-    <script src="includes/jquery-3.1.1.min.js"></script>
-    <script src="includes/activeNotActive.js"></script>
-
-    <script src="includes/get_training_table.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxztqzoBiEWON80fImWSA6WY1D7yx2GY&libraries=places"></script>
-
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--<script src="includes/pattern.js"></script>-->
-    <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <link rel="stylesheet" href="includes/style.css">
-    <title> Sport Control Manager</title>
-    <!--<link rel="stylesheet" href="includes/style.css">-->
-
-</head>
-<body>
-<div class="container">
-    <header class="closed">
-        <article class="overlay"></article>
-        <section>
-            <a href="index.html" id="logo"></a>
-            <ul class="hambBack">
-                <li><a id="back" href="#">B</a></li>
-                <li class="lead"><a href="#" id="hamburger"></a></li>
-            </ul>
-            <ul id="profile">
-                <li>
-                    <a href="#" id="alert">
-                        <article>5</article>
-                    </a>
-                </li>
-                <li><a href="#" id="profileImg"></a>
-                    <ul id = "profileData">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+        <script src="includes/jquery-3.1.1.min.js"></script>
+        <script src="includes/activeNotActive.js"></script>
+        <script src="includes/get_training_table.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxztqzoBiEWON80fImWSA6WY1D7yx2GY&libraries=places"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<script src="includes/pattern.js"></script>-->
+        <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="includes/style.css">
+        <title> Sport Control Manager</title>
+        <!--<link rel="stylesheet" href="includes/style.css">-->
+    </head>
+    <body>
+        <div class="container">
+            <header class="closed">
+                <article class="overlay"></article>
+                <section>
+                    <a href="index.html" id="logo"></a>
+                    <ul class="hambBack">
+                        <li><a id="back" href="#">B</a></li>
+                        <li class="lead"><a href="#" id="hamburger"></a></li>
                     </ul>
-                </li>
-            </ul>
-            <section id="searchBar" >
-                <form action="#" method="post">
-                    <input type="search" name="search" placeholder="Search..">
-                    <input type="submit" value="">
-                </form>
-            </section>
-            <nav id="mainMenu">
-                <ul class="admin notActiveUser">
-                    <li><a class="active" href="#">דוחות</a></li>
-                    <li><a href="#">מתקנים</a></li>
-                    <li><a href="#">מאמנים</a></li>
-                    <li><a href="#">מתאמנים</a></li>
-                    <li><a href="#">אימונים</a></li>
-                </ul>
-                <ul class="coach notActiveUser">
-                    <li><a class="active" href="#">דוחות</a></li>
-                    <li><a href="#">מתאמנים</a></li>
-                    <li><a href="#">אימונים</a></li>
-                </ul>
-                <ul class="client notActiveUser">
-                    <li><a href="#">אימונים</a></li>
-                    <li><a class="active" href="#">מנוי</a></li>
-                </ul>
-            </nav>
-        </section>
-    </header>
-
-    <main>
-        <ol class="breadcrumb">
-            <li><a href="index.html">בית</a></li>
-            <li class="active">אימונים</li>
-        </ol>
-        <h1>אימונים</h1>
-        <section class="admin notActiveUser">
-            <a href="add_training.html" class="addTraining">add</a>
-            <section class="trainigTable">admin table</section>
-        </section>
-        <section class="coach notActiveUser">
-            <section class="trainigTable">coach table</section>
-        </section>
-        <section class="client notActiveUser">
-            <section class="trainigTable">client table</section>
-        </section>
-        <div id="map" style="width: 300px;height: 300px">
-
+                    <ul id="profile">
+                        <li>
+                            <a href="#" id="alert">
+                                <article>5</article>
+                            </a>
+                        </li>
+                        <li><a href="#" id="profileImg"></a>
+                            <ul id = "profileData">
+                            </ul>
+                        </li>
+                    </ul>
+                    <section id="searchBar" >
+                        <form action="#" method="post">
+                            <input type="search" name="search" placeholder="Search..">
+                            <input type="submit" value="">
+                        </form>
+                    </section>
+                    <nav id="mainMenu">
+                        <ul class="admin notActiveUser">
+                            <li><a class="active" href="#">אימונים</a></li>
+                            <li><a href="#">מאמנים</a></li>
+                            <li><a href="#">מתאמנים</a></li>
+                            <li><a href="#">מתקנים</a></li>
+                            <li><a href="#">דוחות</a></li>
+                        </ul>
+                        <ul class="coach notActiveUser">
+                            <li><a class="active" href="#">אימונים</a></li>
+                            <li><a href="#">מתאמנים</a></li>
+                            <li><a href="#">דוחות</a></li>
+                        </ul>
+                        <ul class="client notActiveUser">
+                            <li><a href="#">אימונים</a></li>
+                            <li><a class="active" href="#">מנוי</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </header>
+            <main>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">בית</a></li>
+                    <li class="active">אימונים</li>
+                </ol>
+                <h1>אימונים</h1>
+                <section class="admin notActiveUser">
+                    <a href="add_training.html" class="addTraining">add</a>
+                    <section class="trainigTable">admin table</section>
+                </section>
+                <section class="coach notActiveUser">
+                    <section class="trainigTable">coach table</section>
+                </section>
+                <section class="client notActiveUser">
+                    <section class="trainigTable">client table</section>
+                </section>
+                <div id="map" style="width: 300px;height: 300px">
+                </div>
+             </main>
         </div>
-    </main>
-</div>
-<script>
-    $("#hamburger, .overlay").click(function(){
-        $("header").toggleClass(function(){
-            if($(this).is(".closed")){
-                return "opened";
-            }else return "closed";
-        });
-    });
-    $("#back").click(function () {
-        $(".full,.notFull").each(function () {
-            $(this).removeClass("notFull").removeClass("full").addClass("list");
-        });
-        $(".addTraining").css("display","block");
-        $("#hamburger").parent().addClass("lead");
-        $("#back").parent().removeClass("lead").addClass();
-    });
-</script>
-</body>
+        <script>
+            $("#hamburger, .overlay").click(function(){
+                $("header").toggleClass(function(){
+                    if($(this).is(".closed")){
+                        return "opened";
+                    }else return "closed";
+                });
+            });
+            $("#back").click(function () {
+                $(".full,.notFull").each(function () {
+                    $(this).removeClass("notFull").removeClass("full").addClass("list");
+                });
+                $(".addTraining").css("display","block");
+                $("#hamburger").parent().addClass("lead");
+                $("#back").parent().removeClass("lead").addClass();
+            });
+        </script>
+    </body>
 </html>
