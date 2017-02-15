@@ -30,6 +30,10 @@ $(document).ready( function (){
         "breadcrumb" + " a[href='training.html']"
     ).attr("href","training.html?user="  + currentUser['user'] + "&id=" +currentUser['id']);
 
+    $("." + currentUser['user'] + " a[href='add_training.html']," +
+        "breadcrumb" + " a[href='add_training.html']"
+    ).attr("href","add_training.html?user="  + currentUser['user'] + "&id=  " +currentUser['id']);
+
     loadProfile();
 });
 
