@@ -25,7 +25,7 @@
         (\"765489777\",\"coach\",\"משה אשכנזי\",\"moshe.ash@gmail.com\"),
         (\"654321789\",\"coach\",\"יובל מנדלוביץ\",\"yoval.mendel@gmail.com\"),
         (\"657448391\",\"client\",\"שי לוי\",\"shai.shai@gmail.com\"),
-        (\"589723060\",\"client\",\"משה גרוס\",\"moshe.moshe@gmail.com\")
+        (\"589723060\",\"client\",\"מרינה פבלובה\",\"marina.pav@gmail.com\")
         "))
     {
         echo "<p>Table tbl_user_207 filled successfully</p>";
@@ -92,7 +92,7 @@ if (mysqli_query($conn,
 if (mysqli_query($conn,
     "INSERT INTO tbl_client_207 (client_id, client_name, client_phone, client_city, client_street, client_email) VALUES
 (\"657448391\",\"שי לוי\",\"050-2224455\",\"תל אביב\",\"ארנון 5\",\"shai.shai@gmail.com\"),
-        (\"589723060\",\"משה גרוס\",\"052-9798855\",\"רמת גן\",\"החשמונאים 23\",\"moshe.moshe@gmail.com\")
+        (\"589723060\",\"מרינה פבלובה\",\"052-9798855\",\"רמת גן\",\"החשמונאים 23\",\"moshe.moshe@gmail.com\")
          "))
     {
         echo "<p>Table tbl_client_207 filled successfully</p>";
