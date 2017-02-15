@@ -33,7 +33,7 @@
                         </tr>";
 
                 while ($row=mysqli_fetch_array($response)){
-                    echo "<tr id=\"tr".$row['training_id']." class=\"list\">
+                    echo "<tr id=\"tr".$row['training_id']."\" class=\"list\">
                                     <td class=\"control info\">";
                     if($row['training_status'] =="0"){
                         echo "<i class=\"icon-icon-xxl material-icons\">fiber_new</i>";
@@ -124,7 +124,7 @@
                                 </tr>";
 
                 while ($row = mysqli_fetch_array($response)) {
-                    echo "<tr id=\"tr" . $row['training_id'] . " class=\"list\">
+                    echo "<tr id=\"tr" . $row['training_id'] . "\" class=\"list\">
                                         <td class=\"control info\">";
                     if ($row['training_status'] == "0") {
                         echo "<i class=\"icon - icon - xxl material - icons\">fiber_new</i>";
