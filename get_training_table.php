@@ -14,6 +14,7 @@
                 FROM tbl_training_207 INNER JOIN tbl_complex_207 ON tbl_training_207.complex_id = tbl_complex_207.complex_id
                   INNER JOIN tbl_area_207 ON tbl_complex_207.complex_area=tbl_area_207.area_code
                   INNER JOIN tbl_coach_207 ON tbl_training_207.coach_id=tbl_coach_207.coach_id
+                  WHERE date_start>= CURDATE()
                 ORDER BY tbl_training_207.date_start, tbl_training_207.hour_start;";
 
             $response = @mysqli_query($conn, $query);
