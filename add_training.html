@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
+        <script src="includes/jquery-3.1.1.min.js"></script>
+        <script src="includes/activeNotActive.js"></script>
+        <script src="includes/get_training_table.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxztqzoBiEWON80fImWSA6WY1D7yx2GY&libraries=places"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--<script src="includes/pattern.js"></script>-->
+        <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="includes/style.css">
+        <title> Sport Control Manager</title>
+        <!--<link rel="stylesheet" href="includes/style.css">-->
+    </head>
+    <body>
+        <div class="container">
+            <header class="closed">
+                <article class="overlay"></article>
+            <section>
+                <a href="index.html" id="logo"></a>
+                <ul class="hambBack">
+                    <li><a id="back" href="#">B</a></li>
+                    <li class="lead"><a href="#" id="hamburger"></a></li>
+                </ul>
+                <ul id="profile">
+                    <li>
+                    <a href="#" id="alert">
+                        <article>5</article>
+                    </a>
+                    </li>
+                    <li><a href="#" id="profileImg"></a>
+                        <ul id="profileData">
+                        </ul>
+                    </li>
+                </ul>
+                <section id="searchBar">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="Search..">
+                        <input type="submit" value="">
+                    </form>
+                </section>
+                <nav id="mainMenu">
+                    <ul class="admin notActiveUser">
+                        <li><a class="active" href="#">אימונים</a></li>
+                        <li><a href="#">מאמנים</a></li>
+                        <li><a href="#">מתאמנים</a></li>
+                        <li><a href="#">מתקנים</a></li>
+                        <li><a href="#">דוחות</a></li>
+                    </ul>
+                    <ul class="coach notActiveUser">
+                        <li><a class="active" href="#">אימונים</a></li>
+                        <li><a href="#">מתאמנים</a></li>
+                        <li><a href="#">דוחות</a></li>
+                    </ul>
+                    <ul class="client notActiveUser">
+                        <li><a href="#">אימונים</a></li>
+                        <li><a class="active" href="#">מנוי</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+        <main>
+            <ol class="breadcrumb">
+                <li><a href="index.html">בית</a></li>
+                <li class="active">אימונים</li>
+            </ol>
+            <h1>הוסף אימון</h1>
+            <section id ="addTraining">
+                    <form>
+                        <section id="rightSection">
+                             <h3>אזור</h3>
+                             <section id="mapArea">
+                                 <article></article>
+                                 <article id="mapSection">
+                                     <ul>
+                                         <li>צפון</li>
+                                         <li>חיפה</li>
+                                         <li>השרון</li>
+                                         <li>גוש דן</li>
+                                         <li>שפלה</li>
+                                         <li>ירושלים</li>
+                                         <li>דרום</li>
+                                     </ul>
+                                 </article>
+                             </section>
+                        </section>
+                        <section id="midSection">
+                           <section class="optionComponent">
+                               <h3>מתקן</h3>
+                                <section class="optionBox">
+                                    <input type="search" list="places" name="place">
+                                        <datalist id="places">
+                                            <option value="מועדון זאוס, רמת גן">
+                                            <option value="מרכז הספורט אונ' ת''א">
+                                            <option value="קאנטרי נוה אביבים, ת''א">
+                                            <option value="רנסנס, הגוש הגדול ת''א">
+                                        </datalist>
+                                </section>
+                           </section>
+                           <section class="optionComponent">
+                               <h3>מקצוע</h3>
+                               <article class="optionBox">
+                                   <input type="search" list="sports" name="sport">
+                                        <datalist id="sports">
+                                            <option value="ריצה">
+                                            <option value="שחיה">
+                                            <option value="רכיבה">
+                                            <option value="משולב">
+                                        </datalist>
+                               </article>
+                           </section>
+                           <section class="optionComponent">
+                               <h3>סוג אימון</h3>
+                               <article class="optionBox">
+                                    <input type="search" list="types" name="type">
+                                        <datalist id="types">
+                                            <option value="טכניקה">
+                                            <option value="כושר">
+                                            <option value="קורס שחיה">
+                                            <option value="קורס ילדים">
+                                        </datalist>
+                               </article>
+                           </section>
+                            <section class="optionComponent">
+                                <h3>מאמן</h3>
+                                <article class="optionBox">
+                                    <a href="#coachChoose"> <input type="search" name="coach"> </a>
+                                    <a href="#" class="overlay" id="coachChoose"></a>
+                                    <section class="borderLine">
+                                        <h2>הודעות</h2>
+                                        <section id = "coachWindow">
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach1.jpg">
+                                                <h2>יובל מנדלוביץ</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach2.jpg">
+                                                <h2>אבי כהן</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach3.jpg">
+                                                <h2>שלמה לוי</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach4.jpg">
+                                                <h2>אנה יוס</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach5.jpg">
+                                                <h2>משה אשכנזי</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <a href="#close">
+                                                <img src ="images/pics/coaches/coach6.jpg">
+                                                <h2>מיטל רבונסקי</h2>
+                                                <h4>054-5542800</h4>
+                                            </a>
+                                            <div class="clear"></div>
+                                        </section>
+                                        <a class="close" href="#close"></a>
+                                    </section>
+                                </article>
+                            </section>
+                        </section>
+                        <section id="leftSection">
+                            <section class="optionComponent">
+                                <h3>תאריך</h3>
+                                <article class="optionBox">
+                                    <input type="date" name="startDate">
+                                </article>
+                            </section>
+                            <section class="optionComponent">
+                                <h3 id="repetions"><span><input type="checkbox" name="repeats" value="repeat"></span><span><img src="images/icons/repeat_icon.png"></span>חזרות</h3>
+                            </section>
+                            <section id="repeats">
+                                <article>
+                                    <p>א</p>
+                                    <p>ב</p>
+                                    <p>ג</p>
+                                    <p>ד</p>
+                                    <p>ה</p>
+                                    <p>ו</p>
+                                    <p>ש</p>
+                                </article>
+                                <article id = "afterWeek">
+                                    <input type="radio" name="afterWeek" value="week" checked="checked" >
+                                    <label>סיום לאחר</label>
+                                    <article class="optionBox">
+                                        <input type="number" name="numWeek" value="0" min="0" max="30">
+                                    </article>
+                                    <label>שבועות</label>
+                                </article>
+                                <article id = "afterDate">
+                                    <input type="radio" name="afterWeek" value="date">
+                                    <label>סיום בתאריך</label>
+                                    <article class="optionBox">
+                                        <input type="date" name="startDate">
+                                    </article>
+                                </article>
+                            </section>
+                            <section class="optionComponent">
+                                <article class="smallOptionBox">
+                                    <h3>התחלה</h3>
+                                    <input type="time" name="repeats" value="repeat">
+                                </article>
+                                <article class="smallOptionBox">
+                                    <h3>סיום</h3>
+                                    <input type="time" name="repeats" value="repeat">
+                                </article>
+                            </section>
+                            <button type="button" class="mySubmit"></button>
+                        </section>
+                    </form>
+                    <div class = "clear"></div>
+                </section>
+        </section>
+        <script>
+            bottomSite();
+        </script>
+    </body>
+</html>
