@@ -59,7 +59,6 @@ var openCloseTraining = function () {
 
         $(this).click(function () {
             var nextTrThis = $(this).next();
-
             if (nextTrThis.hasClass('addClosed')) {
                 if(!nextTrThis.hasClass('withMap')){
                     enterAdditionalData(nextTrThis);
