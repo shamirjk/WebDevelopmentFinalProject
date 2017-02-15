@@ -14,13 +14,17 @@ $(document).ready( function () {
 
 var openCloseTraining = function () {
     var allTrainingTr = $("tr[id^='tr']").each(function () {
-        console.log("in function each");
+
         $(this).click(function () {
             var nextTrThis = $(this).next();
-            //initMap(nextTrThis.find(".addiAddress"));
-            jasonMap(nextTrThis.find('.addiAddress'));
+
             if (nextTrThis.hasClass('addClosed')) {
+                if(!nextTrThis.hasClass('withMap')){
+                    enterAdditionalData(nextTrThis);
+                    nextTrThis.addClass('withMap');
+                }
                 nextTrThis.removeClass('addClosed').addClass('addOpened');
+
             } else {
                 nextTrThis.removeClass('addOpened').addClass('addClosed');
             }
@@ -36,32 +40,33 @@ var openCloseTraining = function () {
     });
 };
 
-
-var jasonMap = function(trOb) {
-    //mapGoogle
-
-    console.log(trOb.find(".mapGoogle").attr('class'));
-
-    var jasonPath = (trOb.children('p').eq(1).html() + "," + trOb.children('p').eq(2).html()).split(" ").join("+");
+var enterAdditionalData = function(trOb) {
+    var address = trOb.find('.addiAddress');
+    var jasonPath = (address.children('p').eq(1).html() + "," + address.children('p').eq(2).html()).split(" ").join("+");
 
     jasonPath = "https://maps.googleapis.com/maps/api/geocode/json?address=" +
         jasonPath + "&key=AIzaSyBIxztqzoBiEWON80fImWSA6WY1D7yx2GY";
 
-    console.log(jasonPath);
-
     $.getJSON(jasonPath, function (data) {
-        console.log(data.status);
         if (data.status == "OK") {
-
-            var location = data.results[0];//.geometry.location;
-
-            console.log(typeof location.lat);
-            console.log(typeof location.lng);
-            initMap(location,trOb.find('.mapGoogle')[0])
+            var location = data.results[0];
+            initMap(location,address.find('.mapGoogle')[0])
         }
     });
-
+    $.getJSON("includes/user_pic.json", function (data) {
+        var coachId = trOb.find(".addiCoach p").next().html();
+        $.each(data.profileUrl, function (k, v) {
+            if(v.id == coachId){
+                var backgroundUrl = v.url;
+                trOb.find('.addiCoach article').css(
+                    {"background":"url(" + backgroundUrl +") no-repeat",
+                        "background-size":"cover"}
+                );
+            }
+        });
+    });
 };
+
 function initMap(location,trOb) {
     var map = new google.maps.Map(trOb, {
         center: {lat: location.geometry.location.lat , lng: location.geometry.location.lng},
