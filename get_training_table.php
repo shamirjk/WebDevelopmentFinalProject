@@ -33,10 +33,13 @@
                         </tr>";
 
                 while ($row=mysqli_fetch_array($response)){
-                    echo "<tr id=\"tr".$row['training_id']." class=\"list\">
+                    echo "<tr id=\"tr".$row['training_id']."\" class=\"list\">
                                     <td class=\"control info\">";
                     if($row['training_status'] =="0"){
-                        echo "<i class=\"icon-icon-xxl material-icons\">fiber_new</i>";
+                        echo "<i class=\"material-icons\">fiber_new</i>";
+                    }
+                    if($row['training_status'] =="2"){
+                        echo "<i class=\"material-icons\">event_busy</i>";
                     }
                     echo"</td>
                                     <td class=\"coachTr\">".$row['coach_name']."</td>
@@ -124,10 +127,10 @@
                                 </tr>";
 
                 while ($row = mysqli_fetch_array($response)) {
-                    echo "<tr id=\"tr" . $row['training_id'] . " class=\"list\">
+                    echo "<tr id=\"tr" . $row['training_id'] . "\" class=\"list\">
                                         <td class=\"control info\">";
                     if ($row['training_status'] == "0") {
-                        echo "<i class=\"icon - icon - xxl material - icons\">fiber_new</i>";
+                        echo "<i class=\"icon - icon - xxl material-icons\">fiber_new</i>";
                     }
 
                     echo "</td>
@@ -172,8 +175,14 @@
                                             <p>".$row['complex_street']."</p>
                                             <p>".$row['complex_city']."</p>                         
                                         </section>
-                                        <section class='addiCoach'>
-                                        </section>
+                                        <section class='addiCoach'>";
+
+                                            if($row['training_status'] =="0"){
+                                                echo "<a href='#' class=\"acceptTraining\"><i class=\"material-icons md-48 \">check_circle</i></a>
+                                                      <a href='#' class=\"declinerTraining\"><span i class=\"material-icons md-48\">cancel</i></span></a>";
+                                                }
+
+                                        echo"</section>
                                     </td>";
                 }
             }else {
@@ -211,7 +220,7 @@
                                 </tr>";
 
                 while ($row = mysqli_fetch_array($response)) {
-                    echo "<tr id=\"tr" . $row['training_id'] . " class=\"list\">
+                    echo "<tr id=\"tr" . $row['training_id'] . "\" class=\"list\">
                                         <td class=\"control info\">";
                     if ($row['training_status'] == "0") {
                         echo "<i class=\"icon - icon - xxl material - icons\">fiber_new</i>";

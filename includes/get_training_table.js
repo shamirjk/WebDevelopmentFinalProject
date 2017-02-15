@@ -8,9 +8,51 @@ $(document).ready( function () {
         success: function (html) {
             $("." + currentUser['user'] + " .trainigTable" ).html(html);
             openCloseTraining();
+            approveDeclineTraining();
         }
     });
 });
+
+var approveDeclineTraining = function() {
+    $(".acceptTraining").each(function () {
+        $(this).click(function () {
+            var trainingId=($(this).closest('.additional').prev('tr').attr('id')).replace("tr","");
+            console.log(trainingId);
+            var dataString="coach_id="+currentUser['id']+"&training_id="+trainingId+"&training_status=1";
+            $.ajax({
+                type: "POST",
+                url: "approve_decline_training.php",
+                data: dataString,
+                cache: true,
+                success: function (html) {
+                    console.log(html);
+                    location.reload();
+                }
+            });
+        });
+
+    });
+    $(".declinerTraining").each(function () {
+
+        $(this).click(function () {
+            var trainingId=($(this).closest('.additional').prev('tr').attr('id')).replace("tr","");
+            console.log(trainingId);
+            var dataString="coach_id="+currentUser['id']+"&training_id="+trainingId+"&training_status=2";
+            $.ajax({
+                type: "POST",
+                url: "approve_decline_training.php",
+                data: dataString,
+                cache: true,
+                success: function (html) {
+                    console.log(html);
+                    location.reload();
+                }
+            });
+        });
+
+    });
+};
+
 
 var openCloseTraining = function () {
     var allTrainingTr = $("tr[id^='tr']").each(function () {

@@ -475,6 +475,9 @@ input[type=submit]{
         background: #777777;
         border-radius: 4px;
     }
+    .material-icons.md-48{
+        font-size:48px;
+    }
 
     /*.control>span{*/
         /*background: #c6c6c6;*/
