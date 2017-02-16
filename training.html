@@ -25,7 +25,7 @@
                 <section>
                     <a href="index.html" id="logo"></a>
                     <ul class="hambBack">
-                        <li><a id="back" href="#">B</a></li>
+                        <li><a id="back" href="#"></a></li>
                         <li class="lead"><a href="#" id="hamburger"></a></li>
                     </ul>
                     <ul id="profile">
@@ -92,10 +92,7 @@
                 });
             });
             $("#back").click(function () {
-                $(".full,.notFull").each(function () {
-                    $(this).removeClass("notFull").removeClass("full").addClass("list");
-                });
-                $(".addTraining").css("display","block");
+                $('.addOpened').removeClass("addOpened").addClass("addClosed");
                 $("#hamburger").parent().addClass("lead");
                 $("#back").parent().removeClass("lead").addClass();
             });

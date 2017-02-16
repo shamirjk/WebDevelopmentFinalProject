@@ -331,12 +331,13 @@ input[type=submit]{
         /*background: #ffefee;*/
         padding: 10px;
         border-collapse: collapse;
+        clear:both;
     }
 
     .coachTr,.typeTr,.genreTr,.placeTr,.timeTr,.dayTr{
         border-bottom:1px dotted #c6c6c6;
     }
-    .control{
+    .info{
         width: 3%;
         text-align: center;
     }
@@ -359,20 +360,26 @@ input[type=submit]{
         line-height: 14px;
     }
 
-    .control *,.control{
+    .info *,.info{
         vertical-align: bottom;
         border-bottom:none;
         height: 22px;
         line-height: 20px;
         font-size: 20px;
-
     }
 
-    .control i{
+    .info i{
         font-size: 30px;
         color: #3f3f3f;
     }
-
+    .addTraining{
+        float:right;
+        margin-top:15px;
+        margin-right: 10px;
+    }
+    .addTraining i{
+        font-size:40px;
+    }
     /*.control *{*/
         /*color: #c6c6c6;*/
         /*transition: 1s;*/
@@ -401,7 +408,7 @@ input[type=submit]{
         from{ height: 0;}
         to{ height: 180px;}
     }
-    .addOpened *[class^=addi] *{
+    .addOpened *[class^=addi]{
         opacity: 1;
         animation-name:visibAddi;
         animation-duration: 750ms;
@@ -411,7 +418,7 @@ input[type=submit]{
         40%{ opacity: 0;}
         100%{ opacity: 1;}
     }
-    /*.additional .addiCoach{*/
+    /*.additional .addn biCoach{*/
         /*border-bottom-left-radius: 4px;*/
         /*!*border-left: 1px dotted #777777;*!*/
     /*}*/
@@ -449,23 +456,34 @@ input[type=submit]{
     .addiAddress{
         padding-left: 20px;
         width: 70%;
-        height: 300px;
+        height: 350px;
         float: left!important;
         border-left: 1px dotted #c6c6c6;
         border-bottom: 1px dotted #c6c6c6;
         border-bottom-left-radius:4px;
     }
+    .addiAddress>a>i{
+
+        font-size: 22px;
+        height:22px;
+
+    }
+    .addiAddress>a{
+        color: #000000;
+        opacity: 0.7;
+    }
+    .addiAddress>a:hover{
+        opacity: 1;
+    }
     .mapGoogle{
-        height:210px;
+        height:268px;
         background: #777777;
         border-radius: 4px;
     }
     .addiCoach{
         padding-right:20px;
         width:30%;
-        height: 170px;
-        border-bottom-right-radius:4px;
-        border-bottom: 1px dotted #c6c6c6;
+        height: 160px;
         border-right: 1px dotted #c6c6c6;
         /*float: none!important;*/
     }
@@ -474,23 +492,28 @@ input[type=submit]{
         width:100px;
         background: #777777;
         border-radius: 4px;
+
     }
-    .material-icons.md-48{
-        font-size:48px;
+    .addiControl{
+        width:30%;
+        float: right;
+        height:60px;
+        border-bottom-right-radius:4px;
+        border-bottom: 1px dotted #c6c6c6;
+        border-right: 1px dotted #c6c6c6;
     }
-
-    /*.control>span{*/
-        /*background: #c6c6c6;*/
-        /*color: #ffffff;*/
-        /*border-radius: 2px;*/
-        /*font-size: 15px;*/
-        /*padding: 0 2px 0 2px;*/
-    /*}*/
-
-    /**************************************8/
-    /*training table*/
-
-    /*end training table*/
+    .addiControl>*{
+        float:right;
+        margin-right:20px;
+    }
+    .addiControl i{
+        color: #000000;
+        opacity:0.5;
+        font-size: 40px;
+    }
+    .addiControl i:hover{
+        opacity:1;
+    }
 }
 
 @media (min-width: 1000px) {
@@ -610,7 +633,10 @@ input[type=submit]{
         opacity: 0.65;
         position: fixed;
     }
-
+    #back{
+        background: url(../images/icons/chevron_back_icon.png) no-repeat center;
+        background-size: 45px;
+    }
     .closed .overlay {
         display: none;
     }
@@ -769,11 +795,26 @@ input[type=submit]{
     /**************************************************end header*/
     .trainingTable{
         width: 100%;
+        margin-bottom: 80px;
     }
     main table *{
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         line-height: 20px;
         color: #777777;
+    }
+
+    .addTraining{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        z-index:1;
+    }
+    .addTraining i{
+        font-size: 60px;
+        opacity:0.9;
+    }
+    .addTraining i:hover{
+        opacity:1;
     }
     .list{
         width: 100%;
@@ -817,10 +858,6 @@ input[type=submit]{
         left:50px;
         font-size: 40px;
     }
-
-
-
-
     .tags{
         display: none;
     }
@@ -830,9 +867,6 @@ input[type=submit]{
     .addiLabels{
         display: none;
     }
-
-
-
 
     .addClosed{
         display: none;
@@ -845,71 +879,95 @@ input[type=submit]{
         animation-duration: 100ms;
         /*height: 300px;*/
     }
-
-
-
+    tr.addOpened{
+        width: 100%;
+        position:fixed;
+        background: #ffffff;
+        z-index: 10;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .additional{
+        direction: rtl;
+    }
+    .addiControl{
+        position:absolute;
+        bottom:20px;
+        right:0;
+    }
+    .addiControl i{
+        font-size: 50px;
+        color:#000000;
+        opacity: 0.5;
+        margin-right:20px;
+    }
+    .addiControl i:hover,.addiControl i:active{
+        opacity: 1;
+    }
     /*.additional .addiCoach{*/
     /*border-bottom-left-radius: 4px;*/
     /*!*border-left: 1px dotted #777777;*!*/
     /*}*/
-    .additional{
-        border:none!important;
-    }
-    .additional td>*{
-        direction:rtl;
-        padding-top:10px;
-        /*border-bottom:1px dotted #777777;*/
-        /*float:right;*/
-    }
-    .addiLabData{
-        width: 30%;
-        height: 130px;
-        border-right: 1px dotted #c6c6c6;
-        padding-right:20px ;
-    }
-    .addiLabData>*{
-        float:right;
-
-    }
-    .addiData{
-        padding-right:10px;
-    }
-    /*.additional .addiLabels{*/
-    /*border-bottom-right-radius: 4px;*/
+    /*.additional{*/
+        /*border:none!important;*/
     /*}*/
-    .additional p{
-        height: 10px;
-    }
-    .addiLabels{
+    /*.additional td>*{*/
+        /*direction:rtl;*/
+        /*padding-top:10px;*/
+        /*!*border-bottom:1px dotted #777777;*!*/
+        /*!*float:right;*!*/
+    /*}*/
+    /*.addiLabData{*/
+        /*width: 30%;*/
+        /*height: 130px;*/
+        /*border-right: 1px dotted #c6c6c6;*/
+        /*padding-right:20px ;*/
+    /*}*/
+    /*.addiLabData>*{*/
+        /*float:right;*/
 
-    }
-    .addiAddress{
-        padding-left: 20px;
-        width: 70%;
-        height: 300px;
-        float: left!important;
-        border-left: 1px dotted #c6c6c6;
-        border-bottom: 1px dotted #c6c6c6;
-        border-bottom-left-radius:4px;
-    }
-    .mapGoogle{
-        height:210px;
-        background: #777777;
-        border-radius: 4px;
-    }
-    .addiCoach{
-        padding-right:20px;
-        width:30%;
-        height: 170px;
-        border-bottom-right-radius:4px;
-        border-bottom: 1px dotted #c6c6c6;
-        border-right: 1px dotted #c6c6c6;
-        /*float: none!important;*/
-    }
-    .addiCoach article{
-        height:100px;
-        width:100px;
-        background: #777777;
-        border-radius: 4px;
-    }
+    /*}*/
+    /*.addiData{*/
+        /*padding-right:10px;*/
+    /*}*/
+    /*!*.additional .addiLabels{*!*/
+    /*!*border-bottom-right-radius: 4px;*!*/
+    /*!*}*!*/
+    /*.additional p{*/
+        /*height: 10px;*/
+    /*}*/
+    /*.addiLabels{*/
+
+    /*}*/
+    /*.addiAddress{*/
+        /*padding-left: 20px;*/
+        /*width: 70%;*/
+        /*height: 300px;*/
+        /*float: left!important;*/
+        /*border-left: 1px dotted #c6c6c6;*/
+        /*border-bottom: 1px dotted #c6c6c6;*/
+        /*border-bottom-left-radius:4px;*/
+    /*}*/
+    /*.mapGoogle{*/
+        /*height:210px;*/
+        /*background: #777777;*/
+        /*border-radius: 4px;*/
+    /*}*/
+    /*.addiCoach{*/
+        /*padding-right:20px;*/
+        /*width:30%;*/
+        /*height: 170px;*/
+        /*border-bottom-right-radius:4px;*/
+        /*border-bottom: 1px dotted #c6c6c6;*/
+        /*border-right: 1px dotted #c6c6c6;*/
+        /*!*float: none!important;*!*/
+    /*}*/
+    /*.addiCoach article{*/
+        /*height:100px;*/
+        /*width:100px;*/
+        /*background: #777777;*/
+        /*border-radius: 4px;*/
+    /*}*/
 }

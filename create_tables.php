@@ -75,7 +75,7 @@
 
    if (mysqli_query($conn,
         "CREATE TABLE IF NOT EXISTS tbl_training_207(
-        training_id INT(6) UNSIGNED NOT NULL,
+        training_id INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
         day VARCHAR(1) NOT NULL,
         hour_start TIME NOT NULL,
         hour_end TIME NOT NULL,
