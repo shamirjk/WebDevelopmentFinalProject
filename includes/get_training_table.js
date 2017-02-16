@@ -65,7 +65,8 @@ var openCloseTraining = function () {
                     nextTrThis.addClass('withMap');
                 }
                 nextTrThis.removeClass('addClosed').addClass('addOpened');
-
+                $("#hamburger").parent().removeClass("lead").addClass();
+                $("#back").parent().addClass("lead");
             } else {
                 nextTrThis.removeClass('addOpened').addClass('addClosed');
             }

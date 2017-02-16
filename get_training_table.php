@@ -21,20 +21,18 @@
             if ($response) {
                 echo "<table class = \"trainingTable\">
                     <tr class=\"tags\"> 
-                        <td class=\"control\"></td>
+                        <td class=\"info\"></td>
                         <td>מאמן<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></a></td>
                         <td>מקצוע<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                         <td>סוג<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                         <td>מקום<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                         <td>שעה<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                         <td>תאריך<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
-                        <!--<td class=\"control\"></td>
-                        <td class=\"control\"></td>-->
                         </tr>";
 
                 while ($row=mysqli_fetch_array($response)){
                     echo "<tr id=\"tr".$row['training_id']."\" class=\"list\">
-                                    <td class=\"control info\">";
+                                    <td class=\"info\">";
                     if($row['training_status'] =="0"){
                         echo "<i class=\"material-icons\">fiber_new</i>";
                     }
@@ -80,15 +78,22 @@
                                         
                                         <section class='addiAddress'>
                                             <article class='mapGoogle'></article>
-                                            <p>".$row['complex_name']."</p>
-                                            <p>".$row['complex_street']."</p>
-                                            <p>".$row['complex_city']."</p>                         
+                                            
+                                            <a href=\"https://maps.google.com/?daddr=".$row['complex_street']."+".$row['complex_city']."\">
+                                                <i class=\"material-icons\">place</i>
+                                                ".$row['complex_name']."  
+                                            </a>
+                                            <p>".$row['complex_street'].", ".$row['complex_city']."</p>
                                         </section>
                                         <section class='addiCoach'>
                                            <article>
                                            </article>   
                                            <p>".$row['coach_name']."</p>
                                            <p>".$row['coach_id']."</p>
+                                        </section>
+                                        <section class='addiControl'>
+                                            <a href='#' class=\"editTraining\"><i class=\"material-icons\">mode_edit</i></a>
+                                            <a href='#' class=\"deliteTraining\"><i class=\"material-icons\">delete_forever</i></a>
                                         </section>
                                     </td>";
                 }
@@ -116,19 +121,17 @@
             if ($response) {
                 echo "<table class = \"trainingTable\">
                                 <tr class=\"tags\"> 
-                                    <td class=\"control\"></td>
+                                    <td class=\"info\"></td>
                                     <td>מקצוע<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>סוג<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>מקום<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>שעה<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>תאריך<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
-                                    <td class=\"control\"></td>
-                                    <td class=\"control\"></td>
                                 </tr>";
 
                 while ($row = mysqli_fetch_array($response)) {
                     echo "<tr id=\"tr" . $row['training_id'] . "\" class=\"list\">
-                                        <td class=\"control info\">";
+                                        <td class=\"info\">";
                     if ($row['training_status'] == "0") {
                         echo "<i class=\"icon - icon - xxl material-icons\">fiber_new</i>";
                     }
@@ -175,14 +178,15 @@
                                             <p>".$row['complex_street']."</p>
                                             <p>".$row['complex_city']."</p>                         
                                         </section>
-                                        <section class='addiCoach'>";
-
+                                        <section class='addiCoach'>
+                                        </section>
+                                        <section class='control'>";
                                             if($row['training_status'] =="0"){
-                                                echo "<a href='#' class=\"acceptTraining\"><i class=\"material-icons md-48 \">check_circle</i></a>
-                                                      <a href='#' class=\"declinerTraining\"><span i class=\"material-icons md-48\">cancel</i></span></a>";
-                                                }
+                                                echo "<a href='#' class=\"acceptTraining\"><i class=\"material-icons md-48 \">check_circle</i></a>";
 
-                                        echo"</section>
+                                                }
+                                    echo"<a href='#' class=\"declinerTraining\"><i class=\"material-icons md-48\">cancel</i></a>
+                                        </section>
                                     </td>";
                 }
             }else {
@@ -209,19 +213,17 @@
             if ($response) {
                 echo "<table class = \"trainingTable\">
                                 <tr class=\"tags\"> 
-                                    <td class=\"control\"></td>
+                                    <td class=\"info\"></td>
                                     <td>מקצוע<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>סוג<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>מקום<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>שעה<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
                                     <td>תאריך<a href=\"#\" class=\"glyphicon glyphicon-sort-by-attributes-alt\"></td>
-                                    <td class=\"control\"></td>
-                                    <td class=\"control\"></td>
                                 </tr>";
 
                 while ($row = mysqli_fetch_array($response)) {
                     echo "<tr id=\"tr" . $row['training_id'] . "\" class=\"list\">
-                                        <td class=\"control info\">";
+                                        <td class=\"info\">";
                     if ($row['training_status'] == "0") {
                         echo "<i class=\"icon - icon - xxl material - icons\">fiber_new</i>";
                     }
@@ -270,6 +272,8 @@
                                         </section>
                                         <section class='addiCoach'>
                                        
+                                        </section>
+                                        <section class='control'>
                                         </section>
                                     </td>";
                 }
