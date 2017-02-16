@@ -475,6 +475,9 @@ input[type=submit]{
     .addiAddress>a:hover{
         opacity: 1;
     }
+    .addiAddress>p{
+        margin-right:26px;
+    }
     .mapGoogle{
         height:268px;
         background: #777777;
