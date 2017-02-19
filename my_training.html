@@ -4,6 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=0">
         <script src="includes/jquery-3.1.1.min.js"></script>
+        <script src="includes/active_not_active.js"></script>
+        <script src="includes/get_training_table.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIxztqzoBiEWON80fImWSA6WY1D7yx2GY&libraries=places"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Alef:400,700&amp;subset=hebrew" rel="stylesheet">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -12,10 +16,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
               integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css">
         <link rel="stylesheet" href="includes/style.css">
-        <title>Sport Control Manager</title>
-        <script src="includes/active_not_active.js"></script>
+        <title> Sport Control Manager</title>
     </head>
     <body>
         <div class="container">
@@ -24,7 +26,7 @@
                 <section>
                     <a href="index.html" id="logo"></a>
                     <ul class="hambBack">
-                        <li><a href="#">B</a></li>
+                        <li><a id="back" href="#"></a></li>
                         <li class="lead"><a href="#" id="hamburger"></a></li>
                     </ul>
                     <ul id="profile">
@@ -46,54 +48,43 @@
                     </section>
                     <nav id="mainMenu">
                         <ul class="admin notActiveUser">
-                            <li><a href="training.html">אימונים</a></li>
-                            <li><a href="#">מתאמנים</a></li>
+                            <li><a class="active" href="training.html">אימונים</a></li>
                             <li><a href="#">מאמנים</a></li>
+                            <li><a href="#">מתאמנים</a></li>
                             <li><a href="#">מתקנים</a></li>
                             <li><a href="#">דוחות</a></li>
                         </ul>
                         <ul class="coach notActiveUser">
-                            <li><a href="training.html">אימונים</a></li>
+                            <li><a class="active" href="training.html">אימונים</a></li>
                             <li><a href="#">מתאמנים</a></li>
                             <li><a href="#">דוחות</a></li>
                         </ul>
                         <ul class="client notActiveUser">
                             <li><a href="training.html">אימונים</a></li>
-                            <li><a href="my_training.html">אימונים שלי</a></li>
+                            <li><a class="active" href="my_training.html">אימונים שלי</a></li>
                             <li><a href="#">מנוי</a></li>
                         </ul>
                     </nav>
                 </section>
             </header>
-        <main id="indexMain">
-            <section>
-                <h1>ברוכים הבאים</h1>
-                <h2>להתאמן איתנו יותר קל!</h2>
-                <section class="descTop">
-                    <article>
-                        <h3>יצירת אימון מהירה</h3>
-                        <article></article>
-                    </article>
-                    <article>
-                        <h3>ניהול אימונים</h3>
-                        <article></article>
-                    </article>
-                    <article>
-                        <h3>נווט לאימון</h3>
-                        <article></article>
-                    </article>
-                    <article>
-                        <h3>ניהול מעודפים</h3>
-                        <article></article>
-                    </article>
-                    <article>
-                        <h3>תמיכה במוביל</h3>
-                        <article></article>
-                    </article>
-                    <div class="clear"></div>
+            <main>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="index.html">אימונים</a></li>
+                    <li class="active">אימונים שלי</li>
+                </ol>
+                <h1>אימונים שלי</h1>
+                <section class="admin notActiveUser">
+                    <a href="add_training.html" class="addTraining"><i class="material-icons">add_circle</i></a>
+                    <section class="trainigTable">admin table</section>
                 </section>
-            </section>
-        </main>
-    </div>
+                <section class="coach notActiveUser">
+                    <section class="trainigTable">coach table</section>
+                </section>
+                <section class="client notActiveUser">
+                    <section class="trainigTable">client table</section>
+                </section>
+            </main>
+        </div>
     </body>
 </html>

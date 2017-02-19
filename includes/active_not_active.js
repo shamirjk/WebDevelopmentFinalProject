@@ -23,19 +23,40 @@ $(document).ready( function (){
     $("." + currentUser['user']).each(function(){
         $(this).removeClass("notActiveUser").addClass("activeUser");
     });
+    togleHamBack();
+    updatesLink();
+    loadProfile();
+});
+
+var togleHamBack = function() {
+    $("#hamburger, .overlay").click(function () {
+        $("header").toggleClass(function () {
+            if ($(this).is(".closed")) {
+                return "opened";
+            } else return "closed";
+        });
+    });
+    $("#back").click(function () {
+        $('.addOpened').removeClass("addOpened").addClass("addClosed");
+        $("#hamburger").parent().addClass("lead");
+        $("#back").parent().removeClass("lead").addClass();
+    });
+};
+
+var updatesLink = function(){
     $("#logo,.breadcrumb" + " a[href='index.html']"
     ).attr("href","index.html?user=" + currentUser['user'] + "&id=" +currentUser['id']);
 
     $("." + currentUser['user'] + " a[href='training.html']," +
-        "breadcrumb" + " a[href='training.html']"
+        ".breadcrumb" + " a[href='training.html']"
     ).attr("href","training.html?user="  + currentUser['user'] + "&id=" +currentUser['id']);
 
-    $("." + currentUser['user'] + " a[href='add_training.html']," +
-        "breadcrumb" + " a[href='add_training.html']"
-    ).attr("href","add_training.html?user="  + currentUser['user'] + "&id=  " +currentUser['id']);
+    $("." + currentUser['user'] + " a[href='add_training.html']"
+    ).attr("href","add_training.html?user="  + currentUser['user'] + "&id=" +currentUser['id']);
 
-    loadProfile();
-});
+    $("." + currentUser['user'] + " a[href='my_training.html']"
+    ).attr("href","my_training.html?user="  + currentUser['user'] + "&id=" +currentUser['id'] + "&my=1");
+};
 
 var loadProfile = function(){
     var dataString = "user=" + currentUser['user'] + "&id=" +currentUser['id'];
@@ -46,21 +67,16 @@ var loadProfile = function(){
         cache: true,
         success: function (html) {
             $('#profileData').html(html);
-
         }
     });
-
     $.getJSON("includes/user_pic.json", function (data) {
-        console.log("in get json");
         $.each(data.profileUrl, function (k, v) {
-            console.log("in data json");
             if(v.id == currentUser['id']){
-                console.log(v.id);
                 var backgroundUrl = v.url;
-                console.log($("#profileImg").css(
+                $("#profileImg").css(
                     {"background":"url(" + backgroundUrl +") no-repeat",
                     "background-size":"cover"}
-                ));
+                );
             }
         });
     });

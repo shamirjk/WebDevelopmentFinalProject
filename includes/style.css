@@ -2,19 +2,14 @@
     margin: 0;
     padding: 0;
 }
-
-
 h1{
     direction:rtl;
 }
-
 .breadcrumb{
     margin-top: -20px!important;
     background: #ebebeb;
     float: right;
 }
-/**log in style*/
-
 #login form{
     width: 300px;
     margin:auto;
@@ -33,7 +28,6 @@ label.glyphicon{
 }
 .loinBtn>div{
     width:50%;
-
 }
 .loinBtn select{
     clear: both;
@@ -49,27 +43,20 @@ input{
     background:#ffffff;
     height:34px;
 }
-/*****************/
-
 a {
     text-decoration: none;
-
 }
-
 a:hover {
     text-decoration: none;
 }
-
 header, main, footer, section, article, nav {
     display: block;
 }
-
 .container {
     margin: 0;
     padding: 0;
     width: 100%;
 }
-
 header {
     background-color: #777777;
     height: 70px;
@@ -96,7 +83,6 @@ header>section>ul:nth-child(2)>li>a,header>section>ul:nth-child(2)>li{
     background: url("../images/icons/hamburger_icon_close.png") center no-repeat;
     background-size: 23px;
 }
-/*navigation*/
 nav > ul > li > a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #ffffff;
@@ -122,15 +108,12 @@ nav > ul > li > a {
     color: #ffffff;
     text-align: center;
     line-height:20px;
-
 }
 header >section>ul:nth-child(3)>ul:nth-child(3){
     clear: both;
-    /*border: 1px solid violet;*/
 }
 #name{
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    /*border: 1px solid coral;*/
     display: block;
     color: #ffffff;
     text-align: right;
@@ -142,19 +125,14 @@ header >section>ul:nth-child(3)>ul:nth-child(3){
     padding: 0;
     border-radius: 0;
 }
-
-main {
+main{
     max-width: 1000px;
-    /*border: 1px solid black;*/
     margin: 0 auto;
     padding: 0 20px 10px 20px;
 }
-
 #logo {
     display: block;
 }
-
-/*******search bar*******/
 #searchBar{
     padding-top:24px;
     position:relative;
@@ -172,8 +150,7 @@ input[name=search]{
     color: #000000;
     border: none;
 }
-
-input[type=submit]{
+input[name=search]+input[type=submit]{
     border: none;
     position: absolute;
     width: 22px;
@@ -183,10 +160,11 @@ input[type=submit]{
     background-color: transparent;
     border-radius: 5px;
 }
-/**login bar*/
-/******end search bar*****/
 .notActiveUser{
     display: none;
+}
+.clear{
+    clear:both;
 }
 @media (min-width: 740px) {
     body {
@@ -215,12 +193,9 @@ input[type=submit]{
         text-align:center;
         margin-top: 20%;
     }
-    /***log in***/
-
     h4{
         text-align:right;
     }
-    /*********/
     header > section {
         display: block;
         max-width: 1000px;
@@ -233,20 +208,12 @@ input[type=submit]{
         background-color: #000000;
         font-weight: bold;
     }
-    /*
-    *header
-    */
-    /*logo*/
     #logo {
         background: url("../images/logo.png");
         width: 100px;
         height: 70px;
-        /*border: 1px solid black;*/
         float: right;
     }
-    /*settings panel*/
-
-    /*profile and pic of profile*/
     #profileImg {
         background: url("../images/users/log.png") no-repeat;
         background-size: cover;
@@ -256,7 +223,6 @@ input[type=submit]{
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        /*position: relative;*/
     }
     .hambBack{
         display: none;
@@ -264,18 +230,15 @@ input[type=submit]{
     .hambBack>li{
         display: none;
     }
-
     #profile{
         display: block;
         float: left;
         margin-top: 10px;
     }
-
     #profile>li{
         display: block;
         float: right;
     }
-
     #profile>li:nth-child(1){
         margin: 15px;
         display: block;
@@ -324,16 +287,13 @@ input[type=submit]{
         color: #000000;
         background: #ebebeb;
     }
-    /*table of training for admin*/
     .trainingTable{
         width: 90%;
         margin: 0 auto;
-        /*background: #ffefee;*/
         padding: 10px;
         border-collapse: collapse;
         clear:both;
     }
-
     .coachTr,.typeTr,.genreTr,.placeTr,.timeTr,.dayTr{
         border-bottom:1px dotted #c6c6c6;
     }
@@ -359,7 +319,6 @@ input[type=submit]{
         height: 14px;
         line-height: 14px;
     }
-
     .info *,.info{
         vertical-align: bottom;
         border-bottom:none;
@@ -367,7 +326,6 @@ input[type=submit]{
         line-height: 20px;
         font-size: 20px;
     }
-
     .info i{
         font-size: 30px;
         color: #3f3f3f;
@@ -380,25 +338,15 @@ input[type=submit]{
     .addTraining i{
         font-size:40px;
     }
-    /*.control *{*/
-        /*color: #c6c6c6;*/
-        /*transition: 1s;*/
-    /*}*/
-    /*.control *:hover{*/
-        /*color: #000000;*/
-    /*}*/
-
     tr[id^=tr]{
         cursor: pointer;
     }
-
     .addClosed{
         display: none;
     }
     .addOpened{
         display:table-row;
     }
-
     .addOpened *[class^=addi]{
         animation-name:widthAddi;
         animation-duration: 100ms;
@@ -418,17 +366,12 @@ input[type=submit]{
         40%{ opacity: 0;}
         100%{ opacity: 1;}
     }
-    /*.additional .addn biCoach{*/
-        /*border-bottom-left-radius: 4px;*/
-        /*!*border-left: 1px dotted #777777;*!*/
-    /*}*/
     .additional{
         border:none!important;
     }
     .additional td>*{
         direction:rtl;
         padding-top:10px;
-        /*border-bottom:1px dotted #777777;*/
         float:right;
     }
     .addiLabData{
@@ -438,15 +381,20 @@ input[type=submit]{
         padding-right:20px ;
     }
     .addiLabData>*{
-       float:right;
-
+        float:right;
     }
     .addiData{
         padding-right:10px;
+        position: relative;
     }
-    /*.additional .addiLabels{*/
-        /*border-bottom-right-radius: 4px;*/
-    /*}*/
+    .addiData>i{
+        top: 0px;
+        position:absolute;
+        right:80px;
+    }
+    .additional p i{
+        display:none;
+    }
     .additional p{
         height: 10px;
     }
@@ -463,10 +411,8 @@ input[type=submit]{
         border-bottom-left-radius:4px;
     }
     .addiAddress>a>i{
-
         font-size: 22px;
         height:22px;
-
     }
     .addiAddress>a{
         color: #000000;
@@ -482,13 +428,13 @@ input[type=submit]{
         height:268px;
         background: #777777;
         border-radius: 4px;
+        margin-bottom: 20px;
     }
     .addiCoach{
         padding-right:20px;
         width:30%;
         height: 160px;
         border-right: 1px dotted #c6c6c6;
-        /*float: none!important;*/
     }
     .addiCoach article{
         height:100px;
@@ -497,7 +443,22 @@ input[type=submit]{
         border-radius: 4px;
 
     }
+    .addToFavorite p,.deleteToFavorite p{
+        position: absolute;
+        font-size: 40px;
+    }
+    .deleteToFavorite p{
+        top: 14px;
+        right: 34px;
+        color: #000000;
+    }
+    .addToFavorite p{
+        top: 20px;
+        right: 28px;
+        color: #ffffff;
+    }
     .addiControl{
+        position: relative;
         width:30%;
         float: right;
         height:60px;
@@ -514,16 +475,179 @@ input[type=submit]{
         opacity:0.5;
         font-size: 40px;
     }
-    .addiControl i:hover{
+    .addiControl p{
+        opacity:0.5;
+    }
+    .addiControl i:hover,.addiControl p:hover{
         opacity:1;
+    }
+    #newTraining form{
+        padding: 0;
+        width: 100%;
+        min-height: 400px;
+    }
+    #newTraining form>section{
+        width:30%;
+        float: right;
+        margin-right:2%;
+        margin-bottom: 20px;
+    }
+    #rightNewTraining{
+        height: 292px;
+    }
+    #mapArea{
+        border:1px solid #c6c6c6;
+        border-radius:4px;
+        height: 86.5%;
+    }
+    #mapArea>article{
+        height: 100%;
+        width: 50%;
+        float: right;
+    }
+    #mapArea>article:nth-child(1){
+        border-left: 1px solid #c6c6c6;
+        background: url("../images/israel_section_map.png") no-repeat center;
+    }
+    #mapSection ul{
+        text-align: right;
+        height: 100%;
+        cursor: pointer;
+    }
+    #mapSection li{
+        height: 14.3%;
+        font-size: 18px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        vertical-align: bottom;
+        line-height: 33px;
+        color: #777777;
+        padding-right:10px;
+    }
+    #repeatsCheck{
+        width: 100%;
+    }
+    #repeatsCheck>*:not(div){
+        float:right;
+        margin-top: 10px;
+    }
+    #repeatsCheck>input{
+        margin-top: 15px;
+    }
+    .repeats{
+        display: none;
+    }
+    .repeats ul{
+        width:100%;
+        margin-bottom: 0;
+    }
+    .repeats li{
+        float: right;
+        width: 14.2%;
+        text-align: center;
+    }
+    .repeats a{
+        width: 100%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777777;
+        font-size: 18px;
+    }
+    #afterWeek>*:not(.clear),#afterDate>*:not(.clear),.timeRange>*:not(.clear){
+        float:right;
+    }
+    #afterWeek>input,#afterDate>input{
+        margin-top: 13px;
+    }
+    #afterWeek>article{
+        width:68.4%;
+    }
+    #afterWeek>article>*{
+        float: right;
+    }
+    #afterWeek>article>.input-group{
+        width:60%;
+    }
+    #afterWeek>.input-group{
+        width:50%;
+    }
+    #afterDate>.input-group{
+        width:55%;
+    }
+    .timeRange{
+        width:100%;
+    }
+    .timeRange>*:not(.clear){
+        width:130px;
+        float: right;
+        margin: 1%;
+    }
+    .timeRange>article{
+        float: right;
+    }
+    #newTraining input[type=submit]{
+        width: 50px;
+        height: 50px;
+        background: url("../images/icons/submit_icon.png") no-repeat center;
+        margin: 20px 0 20px 0;
+        background-size: 50px;
+        border: none;
+        opacity: 0.7;
+    }
+    #newTraining input[type=submit]:hover{
+        opacity: 0.8;
+    }
+    #newTraining input[type=submit]:active{
+        opacity: 1;
+    }
+    .descTop{
+        width:90%;
+        margin:0 auto;
+    }
+    #indexMain h2{
+        direction: rtl;
+        font-family: 'Alef', sans-serif;
+        font-size: 28px;
+        color:#c6c6c6;
+    }
+    .descTop>article{
+        float:right;
+        margin:0 7% 7% 0;
+    }
+    .descTop h3{
+        text-align: right;
+        font-size: 2px;
+    }
+    .descTop h3+article{
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        border:1px solid #c6c6c6;
+    }
+    .descTop>article:nth-child(1)>article{
+        background: url("../images/icons/new_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(2)>article{
+        background: url("../images/icons/edit_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(3)>article{
+        background: url("../images/icons/nav_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(4)>article{
+        background: url("../images/icons/my_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(5)>article{
+        background: url("../images/icons/phone_training.jpg") no-repeat center;
+        background-size: 200px;
     }
 }
 
 @media (min-width: 1000px) {
-    /*******search bar*******/
     input[name=search]{
         width:170px;
-        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background: url("../images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
         color: grey;
         padding-right:20px;
@@ -535,19 +659,11 @@ input[type=submit]{
     }
     /******end search bar*****/
 }
-
-@media (max-width: 999px) {
-    /*.container {*/
-        /*background: #0F9FFF;*/
-    /*}*/
-
-}
-
 @media (min-width: 900px){
 
     input[name=search]{
         width:170px;
-        background: url("/images/icons/search_icon_main_black.png") no-repeat right #ffffff;
+        background: url("../images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
         color: grey;
         padding-right:20px;
@@ -557,14 +673,8 @@ input[type=submit]{
     input[type=submit]{
         display: block;
     }
-    /******end search bar*****/
 }
-
 @media (max-width: 899px) {
-    /*.container {*/
-        /*background: #0F9FFF;*/
-    /*}*/
-    /******search bar***/
     input[name=search]::-webkit-input-placeholder{
         color: transparent;
     }
@@ -579,14 +689,13 @@ input[type=submit]{
         color: transparent;
         cursor:pointer;
     }
-    input[type=submit]{
+    input[name=search]+input[type=submit]{
         display: none;
     }
     input[name=search]:focus{
         width:170px;
         background: url("../images/icons/search_icon_main_black.png") no-repeat right #ffffff;
         background-size: 15px;
-        /*color: grey;*/
         padding-right:20px;
         border-right: 1px solid #000000;
         cursor:text;
@@ -597,9 +706,7 @@ input[type=submit]{
     input[name=search]:focus::-webkit-input-placeholder,input[name=search]::-moz-placeholder{
         color: black;
     }
-    /******end search bar*****/
 }
-
 @media (max-width: 739px) {
     .closed+main h1{
         font-size: 25px;
@@ -637,7 +744,7 @@ input[type=submit]{
         position: fixed;
     }
     #back{
-        background: url(../images/icons/chevron_back_icon.png) no-repeat center;
+        background: url("../images/icons/chevron_back_icon.png") no-repeat center;
         background-size: 45px;
     }
     .closed .overlay {
@@ -650,10 +757,6 @@ input[type=submit]{
     .opened+main>h1{
         display: none;
     }
-    /*
-    *header*****************************************************
-    */
-    /*minimize logo*/
     .closed #logo {
         background: url("../images/logo_mini.png") no-repeat center;
         background-size: 50px;
@@ -682,8 +785,6 @@ input[type=submit]{
         color: #c6c6c6;
     }
     #profile>li:nth-child(2)>a{
-        /*background: url("../images/pics/bar.jpg") no-repeat;*/
-        /*background-size: cover;*/
         display: block;
         width: 80px;
         height: 80px;
@@ -695,7 +796,6 @@ input[type=submit]{
         z-index: 21;
         padding-left: 10px;
     }
-    /********nav bar******/
     nav{
         border-top: 1px solid #555555;
         width:100%;
@@ -723,21 +823,14 @@ input[type=submit]{
         background-color: #000000;
         font-weight: bold;
     }
-    /******end nav bar***/
     header{
         display: block;
         position: fixed;
         z-index: 10;
     }
-
-    /*main{
-        margin-top: 70px;
-    }*/
-
     header>section>ul:nth-child(3)>li:nth-child(1){
         float: right;
     }
-
     header>section>ul:nth-child(3)>li:nth-child(2){
         margin: 15px;
         display: block;
@@ -747,10 +840,6 @@ input[type=submit]{
     #profile li:nth-child(3){
         display: block;
     }
-
-    /*header - build new structure*/
-
-    /*hamburger or back*/
     header>section>ul:nth-child(2){
         display: block;
         float: right;
@@ -770,7 +859,6 @@ input[type=submit]{
         clear: both;
         display: none;
     }
-
     .opened #logo{
         display: none;
     }
@@ -794,18 +882,14 @@ input[type=submit]{
     .breadcrumb{
         display: none;
     }
-
-    /**************************************************end header*/
     .trainingTable{
         width: 100%;
         margin-bottom: 80px;
     }
     main table *{
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        line-height: 20px;
         color: #777777;
     }
-
     .addTraining{
         position:fixed;
         bottom:20px;
@@ -828,13 +912,7 @@ input[type=submit]{
         background: url("../images/icons/chevron_left_icon.png") no-repeat left;
         background-size: 40px 40px;
     }
-    .coachTr{
-        display:none;
-    }
-    .typeTr{
-        display:none;
-    }
-    .genreTr{
+    .coachTr,.typeTr,.genreTr,.tags,.mapGoogle,.addiLabels,.addClosed{
         display:none;
     }
     .placeTr{
@@ -861,21 +939,12 @@ input[type=submit]{
         left:50px;
         font-size: 40px;
     }
-    .tags{
-        display: none;
-    }
-    .mapGoogle{
-        display: none;
-    }
-    .addiLabels{
-        display: none;
-    }
 
-    .addClosed{
-        display: none;
-    }
     .addOpened{
         display:table-row;
+    }
+    .addiCoach>article,.addiCoach>p:nth-last-child(1){
+        display: none;
     }
     .addOpened *[class^=addi]{
         animation-name:widthAddi;
@@ -895,10 +964,47 @@ input[type=submit]{
     .additional{
         direction: rtl;
     }
+    .additional p,.addiAddress a{
+        font-size: 20px;
+        line-height: 40px;
+        height: 30px;
+    }
+    .additional>td>*:not(.addiControl){
+        margin:20px;
+    }
+    .addiData>p:nth-child(1),.addiData>p:nth-child(2),.addiData>p:nth-child(6),.addiAddress>p{
+        margin-right:40px;
+    }
     .addiControl{
         position:absolute;
         bottom:20px;
         right:0;
+    }
+    .acceptTraining p,.declinerTraining p{
+        position: absolute;
+        top: -30px;
+    }
+    .acceptTraining p{
+    }
+    .declinerTraining p{
+        color: #ffffff;
+    }
+    .addToFavorite p,.deleteToFavorite p{
+        position: absolute;
+        font-size: 50px;
+    }
+    .deleteToFavorite p{
+        top: 0px;
+        right: 35px;
+        color: #000000;
+    }
+    .addToFavorite p{
+        top: 5px;
+        right: 30px;
+        color: #ffffff;
+    }
+    .addiControl p{
+        opacity:0.5;
     }
     .addiControl i{
         font-size: 50px;
@@ -906,71 +1012,171 @@ input[type=submit]{
         opacity: 0.5;
         margin-right:20px;
     }
-    .addiControl i:hover,.addiControl i:active{
+    .addiControl i:hover,.addiControl p:hover,.addiControl i:active,.addiControl p:active{
+        opacity:1;
+    }
+    .addiData>i{
+        left:20px;
+        top:20px;
+        font-size:50px;
+        position:absolute;
+    }
+    .addiData i,.addiAddress i,.addiCoach i{
+        vertical-align:-12px;
+        font-size: 40px;
+    }
+    #newTraining form{
+        padding: 0;
+        width: 100%;
+    }
+    #newTraining form>section{
+        width:90%;
+        margin: 0 auto;
+    }
+    #rightNewTraining{
+        height: 292px;
+    }
+    #mapArea{
+        border:1px solid #c6c6c6;
+        border-radius:4px;
+        height: 86.5%;
+    }
+    #newTraining form h4{
+        text-align: right;
+    }
+    #mapArea>article{
+        height: 100%;
+        width: 50%;
+        float: right;
+    }
+    #mapArea>article:nth-child(1){
+        border-left: 1px solid #c6c6c6;
+        background: url("../images/israel_section_map.png") no-repeat center;
+    }
+    #mapSection ul{
+        text-align: right;
+        height: 100%;
+        cursor: pointer;
+    }
+    #mapSection li{
+        height: 14.3%;
+        font-size: 18px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        vertical-align: bottom;
+        line-height: 33px;
+        color: #777777;
+        padding-right:10px;
+    }
+    #repeatsCheck{
+        width: 100%;
+    }
+    #repeatsCheck>*:not(div){
+        float:right;
+        margin-top: 10px;
+    }
+    #repeatsCheck>input{
+        margin-top: 15px;
+    }
+    .repeats{
+        display: none;
+    }
+    .repeats ul{
+        width:100%;
+        margin-bottom: 0;
+    }
+    .repeats li{
+        float: right;
+        width: 14.2%;
+        text-align: center;
+    }
+    .repeats a{
+        width: 100%;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777777;
+        font-size: 18px;
+    }
+    #afterWeek>*:not(.clear),#afterDate>*:not(.clear),.timeRange>*:not(.clear){
+        float:right;
+    }
+    #afterWeek>input,#afterDate>input{
+        margin-top: 13px;
+    }
+    #afterWeek>article{
+        width:68.4%;
+    }
+    #afterWeek>article>*{
+        float: right;
+    }
+    #afterWeek>article>.input-group{
+        width:60%;
+    }
+    #afterWeek>.input-group{
+        width:50%;
+    }
+    #afterDate>.input-group{
+        width:55%;
+    }
+    .timeRange{
+        width:100%;
+    }
+    .timeRange>*:not(.clear){
+        width:130px;
+        float: right;
+        margin: 1%;
+    }
+    .timeRange>article{
+        float: right;
+    }
+    #newTraining input[type=submit]{
+        width: 50px;
+        height: 50px;
+        background: url("../images/icons/submit_icon.png") no-repeat center;
+        margin: 20px 0 20px 0;
+        background-size: 50px;
+        border: none;
+        opacity: 0.7;
+        float: right;
+    }
+    #newTraining input[type=submit]:hover{
+        opacity: 0.8;
+    }
+    #newTraining input[type=submit]:active{
         opacity: 1;
     }
-    /*.additional .addiCoach{*/
-    /*border-bottom-left-radius: 4px;*/
-    /*!*border-left: 1px dotted #777777;*!*/
-    /*}*/
-    /*.additional{*/
-        /*border:none!important;*/
-    /*}*/
-    /*.additional td>*{*/
-        /*direction:rtl;*/
-        /*padding-top:10px;*/
-        /*!*border-bottom:1px dotted #777777;*!*/
-        /*!*float:right;*!*/
-    /*}*/
-    /*.addiLabData{*/
-        /*width: 30%;*/
-        /*height: 130px;*/
-        /*border-right: 1px dotted #c6c6c6;*/
-        /*padding-right:20px ;*/
-    /*}*/
-    /*.addiLabData>*{*/
-        /*float:right;*/
-
-    /*}*/
-    /*.addiData{*/
-        /*padding-right:10px;*/
-    /*}*/
-    /*!*.additional .addiLabels{*!*/
-    /*!*border-bottom-right-radius: 4px;*!*/
-    /*!*}*!*/
-    /*.additional p{*/
-        /*height: 10px;*/
-    /*}*/
-    /*.addiLabels{*/
-
-    /*}*/
-    /*.addiAddress{*/
-        /*padding-left: 20px;*/
-        /*width: 70%;*/
-        /*height: 300px;*/
-        /*float: left!important;*/
-        /*border-left: 1px dotted #c6c6c6;*/
-        /*border-bottom: 1px dotted #c6c6c6;*/
-        /*border-bottom-left-radius:4px;*/
-    /*}*/
-    /*.mapGoogle{*/
-        /*height:210px;*/
-        /*background: #777777;*/
-        /*border-radius: 4px;*/
-    /*}*/
-    /*.addiCoach{*/
-        /*padding-right:20px;*/
-        /*width:30%;*/
-        /*height: 170px;*/
-        /*border-bottom-right-radius:4px;*/
-        /*border-bottom: 1px dotted #c6c6c6;*/
-        /*border-right: 1px dotted #c6c6c6;*/
-        /*!*float: none!important;*!*/
-    /*}*/
-    /*.addiCoach article{*/
-        /*height:100px;*/
-        /*width:100px;*/
-        /*background: #777777;*/
-        /*border-radius: 4px;*/
-    /*}*/
+    #indexMain h2{
+        direction: rtl;
+    }
+    .descTop>article{
+        width: 200px;
+        margin:0 auto;
+    }
+    .descTop h3{
+        text-align: right;
+    }
+    .descTop h3+article{
+        width: 200px;
+        height: 200px;
+        border-radius: 4px;
+        border:1px solid #c6c6c6;
+    }
+    .descTop>article:nth-child(1)>article{
+        background: url("../images/icons/new_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(2)>article{
+        background: url("../images/icons/edit_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(3)>article{
+        background: url("../images/icons/nav_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(4)>article{
+        background: url("../images/icons/my_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
+    .descTop>article:nth-child(5)>article{
+        background: url("../images/icons/phone_training.jpg") no-repeat center;
+        background-size: 200px;
+    }
 }
