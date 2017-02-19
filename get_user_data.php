@@ -1,5 +1,4 @@
 <?php
-    //must change
     include("my_db.php");
     if(isset($_POST['user'])){
         $query = "SELECT user_type, user_name, user_email 

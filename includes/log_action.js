@@ -4,7 +4,6 @@ $(document).ready(function () {
         var userId = $("input[name=userId]").val();
         var user = $("select[name=user]").val();
         var dataString = "user=" + user + "&id=" + userId;
-        console.log(userId + "  " + user);
         $.ajax({
             type: 'POST',
             url: 'user_verification.php',

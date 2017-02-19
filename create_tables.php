@@ -1,7 +1,5 @@
 <?php
-    //include("db.php");
     include("my_db.php");
-
     if (mysqli_query($conn,
         "CREATE TABLE IF NOT EXISTS tbl_area_207(
             area_code INT(2) UNSIGNED NOT NULL,
@@ -13,8 +11,6 @@
     } else {
         echo "\nError creating table: " .mysqli_error($conn)."</p>";
     }
-
-
     //complex tabele
     if (mysqli_query($conn,
         "CREATE TABLE IF NOT EXISTS tbl_complex_207(
@@ -23,8 +19,7 @@
         complex_name VARCHAR(60) NOT NULL,
         complex_city VARCHAR(30) NOT NULL,
         complex_street VARCHAR(40) NOT NULL,
-        PRIMARY KEY(complex_id),
-        FOREIGN KEY (complex_area) REFERENCES tbl_area_207(area_code) ON DELETE CASCADE ON UPDATE CASCADE
+        PRIMARY KEY(complex_id)
         )"))
     {
         echo "<p>Table tbl_complex_207 created successfully</p>";
@@ -37,8 +32,7 @@
        "CREATE TABLE IF NOT EXISTS tbl_complex_sport_type_207(
         complex_id INT(4) UNSIGNED NOT NULL,
         type VARCHAR(30) NOT NULL,
-        PRIMARY KEY(complex_id, type),
-        FOREIGN KEY (complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE
+        PRIMARY KEY(complex_id, type)
         )"))
    {
        echo "<p>Table tbl_complex_sport_type_207 created successfully</p>";
@@ -64,15 +58,13 @@
              "CREATE TABLE IF NOT EXISTS tbl_coach_sport_type_207(
               coach_id VARCHAR(30) NOT NULL,
               type VARCHAR(30) NOT NULL,
-              PRIMARY KEY(coach_id, type),
-              FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
+              PRIMARY KEY(coach_id, type)
               )"))
    {
              echo "<p>Table tbl_coach_sport_type_207 created successfully</p>";
    } else {
              echo "<p>Error creating table: " .mysqli_error($conn)."</p>";
    }
-
    if (mysqli_query($conn,
         "CREATE TABLE IF NOT EXISTS tbl_training_207(
         training_id INT(6) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -86,9 +78,7 @@
         complex_id INT(4) UNSIGNED NOT NULL,
         coach_id VARCHAR(30) NOT NULL,
         training_status INT(1) NOT NULL,
-        PRIMARY KEY(training_id),
-        FOREIGN KEY(complex_id) REFERENCES tbl_complex_207(complex_id) ON DELETE CASCADE ON UPDATE CASCADE,
-        FOREIGN KEY(coach_id) REFERENCES tbl_coach_207(coach_id) ON DELETE CASCADE ON UPDATE CASCADE
+        PRIMARY KEY(training_id)
         )"))
    {
         echo "<p>Table tbl_training_207 created successfully</p>";
@@ -123,6 +113,17 @@
    } else {
         echo "<p>Error creating table: \n" .mysqli_error($conn)."</p>";
    }
+    if (mysqli_query($conn,
+        "CREATE TABLE IF NOT EXISTS tbl_favorite_207(
+        client_id VARCHAR(30) NOT NULL,
+        training_id INT(6) UNSIGNED NOT NULL,
+        PRIMARY KEY(client_id, training_id)
+        )"))
+    {
+        echo "<p>Table tbl_favorite_207 created successfully</p>";
+    } else {
+        echo "<p>Error creating table: \n" .mysqli_error($conn)."</p>";
+    }
 
-   //mysqli_close($conn);
+   mysqli_close($conn);
 ?>

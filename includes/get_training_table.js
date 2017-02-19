@@ -1,5 +1,11 @@
 $(document).ready( function () {
     var dataString = "user=" + currentUser['user'] + "&id=" +currentUser['id'];
+    if(currentUser['my'] != undefined){
+
+        console.log("not undefined");
+        dataString += "&my=1";
+        console.log(currentUser['my']);
+    }
     $.ajax({
         type: "POST",
         url: "get_training_table.php",
@@ -9,11 +15,50 @@ $(document).ready( function () {
             $("." + currentUser['user'] + " .trainigTable" ).html(html);
             openCloseTraining();
             approveDeclineTraining();
+            addDeleteFavorite();
         }
     });
 });
 
-var approveDeclineTraining = function() {
+var addDeleteFavorite = function() {
+    $(".addToFavorite").each(function () {
+        $(this).click(function () {
+            var trainingId=($(this).closest('.additional').prev('tr').attr('id')).replace("tr","");
+            console.log(trainingId);
+            var dataString="client_id="+currentUser['id']+"&training_id="+trainingId+"&training_status=1";
+            $.ajax({
+                type: "POST",
+                url: "add_delete_favorite.php",
+                data: dataString,
+                cache: true,
+                success: function (html) {
+                    console.log(html);
+                    location.reload();
+                }
+            });
+        });
+    });
+    $(".deleteToFavorite").each(function () {
+        $(this).click(function () {
+            var trainingId=($(this).closest('.additional').prev('tr').attr('id')).replace("tr","");
+            console.log(trainingId);
+            var dataString="client_id="+currentUser['id']+"&training_id="+trainingId+"&training_status=2";
+            $.ajax({
+                type: "POST",
+                url: "add_delete_favorite.php",
+                data: dataString,
+                cache: true,
+                success: function (html) {
+                    console.log(html);
+                    location.reload();
+                }
+            });
+        });
+
+    });
+};
+
+var approveDeclineTraining= function() {
     $(".acceptTraining").each(function () {
         $(this).click(function () {
             var trainingId=($(this).closest('.additional').prev('tr').attr('id')).replace("tr","");
@@ -53,7 +98,6 @@ var approveDeclineTraining = function() {
     });
 };
 
-
 var openCloseTraining = function () {
     var allTrainingTr = $("tr[id^='tr']").each(function () {
 
@@ -69,6 +113,8 @@ var openCloseTraining = function () {
                 $("#back").parent().addClass("lead");
             } else {
                 nextTrThis.removeClass('addOpened').addClass('addClosed');
+                $("#hamburger").parent().addClass("lead");
+                $("#back").parent().removeClass("lead").addClass();
             }
             allTrainingTr.each(function () {
                 var nextTr = $(this).next();
